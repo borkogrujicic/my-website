@@ -6,30 +6,42 @@
     <title>Borisav Grujicic - Certified Salesforce Developer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body style="background-image: url('{{ url_for('static', filename='coding-photo.jpg') }}'); background-size: cover; background-position: center;">    <header>
+<body style="background-image: url('{{ url_for('static', filename='coding-photo.jpg') }}'); background-size: cover; background-position: center;">    
+    <header>
         <h1>Borisav Grujicic / Certified Salesforce Developer</h1>
+        <div class="topnav">
+            <a href="#AboutMe">About me</a>
+            <a href="#Services">Services</a>
+            <a href="#Contact">Contact</a>
+          </div>
     </header>
+    
 
     <div class="container">
-        <div class="about-me">
+        <div class="about-me" id="AboutMe">
             <h2>About Me:</h2>
-            <p>
-                As a Salesforce developer, I am dedicated to empowering businesses to optimize their operations and achieve success through tailored Salesforce solutions. With a keen understanding of business needs, I specialize in designing and implementing custom solutions using Apex, Lightning Web Components (LWC), Visualforce, and other Salesforce technologies.
-            </p>
-            <p>
-                My expertise extends beyond development; I excel in communication and collaboration, effectively bridging the gap between technical requirements and business objectives. I bring a proven track record of leveraging Salesforce integrations with third-party applications and platforms to streamline processes and enhance efficiency.
-            </p>
-            <p>
-                Driven by a passion for continuous growth, I am committed to staying at the forefront of Salesforce innovation, always seeking new challenges and opportunities to expand my skills and deliver exceptional results.
-            </p>
-            <p>
-                If you're looking to elevate your Salesforce CRM, implement new features and processes, or simply explore opportunities for improvement, I invite you to connect with me at:
-                <a href="mailto:borko.grujicic@gmail.com">borko.grujicic@gmail.com</a>
-            </p>
+            <div class="about-me-content">
+                <p>
+                    As a Salesforce developer, I am dedicated to empowering businesses to optimize their operations and achieve success through tailored Salesforce solutions. With a keen understanding of business needs, I specialize in designing and implementing custom solutions using Apex, Lightning Web Components (LWC), Visualforce, and other Salesforce technologies.
+                </p>
+                <p>
+                    My expertise extends beyond development; I excel in communication and collaboration, effectively bridging the gap between technical requirements and business objectives. I bring a proven track record of leveraging Salesforce integrations with third-party applications and platforms to streamline processes and enhance efficiency.
+                </p>
+                <p>
+                    Driven by a passion for continuous growth, I am committed to staying at the forefront of Salesforce innovation, always seeking new challenges and opportunities to expand my skills and deliver exceptional results.
+                </p>
+                <p>
+                    If you're looking to elevate your Salesforce CRM, implement new features and processes, or simply explore opportunities for improvement, I invite you to connect with me at:
+                    <a href="mailto:borko.grujicic@gmail.com">borko.grujicic@gmail.com</a>
+                </p>
+            </div>
+            <div class="about-me-photo">
+                <img src="{{ url_for('static', filename='my-photo.png') }}" alt="My Photo">
+            </div>
         </div>
     </div>
 
-    <section class="services">
+    <section class="services" id="Services">
         <h2>Services:</h2>
         <ul>
             <li>Service 1</li>
@@ -38,5 +50,17 @@
             <!-- Add more services as needed -->
         </ul>
     </section>
+
+    <section class="contact-me" id="Contact">
+        <h2>Contact Me:</h2>
+        <form action="/send_email" method="post">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" rows="6" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+    </section>
+
 </body>
 </html>

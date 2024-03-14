@@ -20,11 +20,31 @@ header {
 }
 
 .about-me {
-    max-width: 1000px; /* Adjust width as needed */
+    max-width: 1000px;
+    margin: 0 auto; /* Center the container */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Clear float */
+}
+
+.about-me-content {
+    float: left;
+    width: 70%; /* Adjust width as needed */
+}
+
+.about-me-photo {
+    float: right;
+    width: 30%; /* Adjust width as needed */
+    text-align: center; /* Center the image horizontally */
+    margin-top: 20px; /* Add some margin to the top of the image */
+    border-radius: 50%; /* Make the image round */
+}
+
+.about-me-photo img {
+    width: 100%; /* Make the image responsive */
+    border-radius: 5px; /* Add rounded corners to the image */
 }
 
 .services {
@@ -54,3 +74,71 @@ header {
     margin-bottom: 10px;
 }
 
+/* Add this CSS to your existing stylesheet */
+
+.contact-me {
+    max-width: 1000px;
+    margin: 20px auto; /* Adjust margin as needed */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-me h2 {
+    margin-top: 0;
+}
+
+.contact-me form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me label {
+    margin-bottom: 5px;
+}
+
+.contact-me input,
+.contact-me textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-me button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-me button:hover {
+    background-color: #45a049;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  

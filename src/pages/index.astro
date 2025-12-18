@@ -1,0 +1,141 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/sections/Hero.astro";
+import LogoCloud from "@/components/sections/LogoCloud.astro";
+import Features from "@/components/sections/Features.astro";
+import Pricing from "@/components/sections/Pricing.astro";
+import Testimonials from "@/components/sections/Testimonials.astro";
+import CTA from "@/components/sections/CTA.astro";
+
+const features = [
+  {
+    title: "Lightning Fast",
+    description: "Built for speed. Our infrastructure ensures your data is processed in milliseconds.",
+    icon: "zap",
+  },
+  {
+    title: "Enterprise Security",
+    description: "Bank-grade encryption and SOC 2 compliance keep your data safe.",
+    icon: "shield",
+  },
+  {
+    title: "Advanced Analytics",
+    description: "Get deep insights with our real-time analytics dashboard.",
+    icon: "chart",
+  },
+  {
+    title: "Team Collaboration",
+    description: "Work together seamlessly with built-in team features.",
+    icon: "users",
+  },
+  {
+    title: "Global Scale",
+    description: "Deploy worldwide with our distributed cloud infrastructure.",
+    icon: "globe",
+  },
+  {
+    title: "API First",
+    description: "Integrate with anything using our comprehensive REST API.",
+    icon: "lock",
+  },
+];
+
+const pricingTiers = [
+  {
+    name: "Starter",
+    price: "$29",
+    description: "Perfect for small teams getting started.",
+    features: [
+      "Up to 5 team members",
+      "10GB storage",
+      "Basic analytics",
+      "Email support",
+    ],
+    cta: { href: "/login", label: "Start Free Trial" },
+  },
+  {
+    name: "Pro",
+    price: "$99",
+    description: "For growing businesses that need more.",
+    features: [
+      "Up to 25 team members",
+      "100GB storage",
+      "Advanced analytics",
+      "Priority support",
+      "Custom integrations",
+    ],
+    cta: { href: "/login", label: "Start Free Trial" },
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "For large organizations with custom needs.",
+    features: [
+      "Unlimited team members",
+      "Unlimited storage",
+      "Custom analytics",
+      "24/7 dedicated support",
+      "SLA guarantee",
+      "On-premise option",
+    ],
+    cta: { href: "/login", label: "Contact Sales" },
+  },
+];
+
+const testimonials = [
+  {
+    quote: "SaaSify has transformed how we manage our workflow. We've seen a 40% increase in productivity.",
+    author: "Sarah Chen",
+    role: "CTO",
+    company: "TechStart",
+  },
+  {
+    quote: "The best investment we've made this year. The analytics alone have paid for itself.",
+    author: "Marcus Johnson",
+    role: "CEO",
+    company: "GrowthLab",
+  },
+  {
+    quote: "Finally, a platform that actually delivers on its promises. Highly recommended.",
+    author: "Emily Rodriguez",
+    role: "VP Engineering",
+    company: "ScaleUp Inc",
+  },
+];
+---
+
+<BaseLayout title="Home" description="SaaSify - The modern SaaS platform for scaling your business">
+  <Hero
+    badge="Now with AI-powered insights"
+    title="Build faster. Scale smarter."
+    subtitle="SaaSify is the all-in-one platform that helps teams collaborate, analyze, and grow. Join thousands of companies already using SaaSify."
+    primaryCta={{ href: "/login", label: "Get Started Free" }}
+    secondaryCta={{ href: "#features", label: "Learn More" }}
+  />
+
+  <LogoCloud />
+
+  <Features
+    title="Everything you need to succeed"
+    subtitle="Powerful features designed to help your team work more efficiently and make data-driven decisions."
+    features={features}
+  />
+
+  <Testimonials
+    title="Loved by teams worldwide"
+    testimonials={testimonials}
+  />
+
+  <Pricing
+    title="Simple, transparent pricing"
+    subtitle="Choose the plan that fits your needs. All plans include a 14-day free trial."
+    tiers={pricingTiers}
+  />
+
+  <CTA
+    title="Ready to get started?"
+    description="Join thousands of teams already using SaaSify to transform their workflow. Start your free trial today."
+    cta={{ href: "/login", label: "Start Free Trial" }}
+  />
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+const footerLinks = {
+  product: [
+    { href: "#", label: "Features" },
+    { href: "#", label: "Pricing" },
+    { href: "#", label: "Integrations" },
+  ],
+  company: [
+    { href: "#", label: "About" },
+    { href: "#", label: "Blog" },
+    { href: "#", label: "Careers" },
+  ],
+  legal: [
+    { href: "/privacy", label: "Privacy" },
+    { href: "#", label: "Terms" },
+    { href: "#", label: "Cookie Policy" },
+  ],
+};
+---
+
+<footer class="border-t bg-background">
+  <div class="container max-w-5xl mx-auto py-12">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="flex items-center space-x-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6"
+          >
+            <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+          </svg>
+          <span class="font-bold">SaaSify</span>
+        </a>
+        <p class="mt-4 text-sm text-muted-foreground">
+          The modern platform for building and scaling your business.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-4">Product</h3>
+        <ul class="space-y-2">
+          {footerLinks.product.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-4">Company</h3>
+        <ul class="space-y-2">
+          {footerLinks.company.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2">
+          {footerLinks.legal.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+      <p>&copy; {new Date().getFullYear()} SaaSify. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

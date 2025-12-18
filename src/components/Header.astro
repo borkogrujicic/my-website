@@ -1,0 +1,50 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/login", label: "Login" },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container max-w-5xl mx-auto flex h-14 items-center">
+    <div class="mr-4 flex">
+      <a href="/" class="mr-6 flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+        </svg>
+        <span class="font-bold">SaaSify</span>
+      </a>
+    </div>
+    <nav class="flex items-center gap-6 text-sm">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="transition-colors hover:text-foreground/80 text-foreground/60"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <div class="flex flex-1 items-center justify-end space-x-2">
+      <ThemeToggle />
+      <a
+        href="/login"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+</header>

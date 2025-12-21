@@ -35,10 +35,10 @@ const iconPaths: Record<string, string> = {
         </p>
       )}
     </div>
-    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mt-12">
+    <div class="grid gap-px sm:grid-cols-2 md:grid-cols-3 mt-12 bg-border overflow-hidden rounded-lg border shadow-2xl">
     {features.map((feature) => (
-      <div class="relative overflow-hidden rounded-lg border bg-card p-6">
-        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-muted">
+      <div class="relative overflow-hidden bg-card p-8">
+        <div class="inline-flex p-2 border border-foreground rounded-lg mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -52,8 +52,8 @@ const iconPaths: Record<string, string> = {
             <path d={iconPaths[feature.icon] || iconPaths.zap} />
           </svg>
         </div>
-        <h3 class="mt-4 font-bold">{feature.title}</h3>
-        <p class="mt-2 text-sm text-muted-foreground">{feature.description}</p>
+        <h3 class="font-bold mb-2">{feature.title}</h3>
+        <p class="text-sm text-muted-foreground">{feature.description}</p>
       </div>
     ))}
     </div>

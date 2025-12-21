@@ -9,133 +9,135 @@ import CTA from "@/components/sections/CTA.astro";
 
 const features = [
   {
-    title: "Lightning Fast",
-    description: "Built for speed. Our infrastructure ensures your data is processed in milliseconds.",
+    title: "Astro.js Powered",
+    description: "Built with Astro for lightning-fast performance and optimal SEO out of the box.",
     icon: "zap",
   },
   {
-    title: "Enterprise Security",
-    description: "Bank-grade encryption and SOC 2 compliance keep your data safe.",
+    title: "shadcn/ui Components",
+    description: "Beautiful, accessible components built with Radix UI and Tailwind CSS.",
     icon: "shield",
   },
   {
-    title: "Advanced Analytics",
-    description: "Get deep insights with our real-time analytics dashboard.",
+    title: "TypeScript Ready",
+    description: "Full TypeScript support for type-safe development and better DX.",
     icon: "chart",
   },
   {
-    title: "Team Collaboration",
-    description: "Work together seamlessly with built-in team features.",
+    title: "Dark Mode",
+    description: "Built-in dark mode support with seamless theme switching.",
     icon: "users",
   },
   {
-    title: "Global Scale",
-    description: "Deploy worldwide with our distributed cloud infrastructure.",
+    title: "Responsive Design",
+    description: "Mobile-first approach ensuring perfect display on all devices.",
     icon: "globe",
   },
   {
-    title: "API First",
-    description: "Integrate with anything using our comprehensive REST API.",
+    title: "Ready to Deploy",
+    description: "Optimized for Vercel, Netlify, and other modern hosting platforms.",
     icon: "lock",
   },
 ];
 
 const pricingTiers = [
   {
-    name: "Starter",
-    price: "$29",
-    description: "Perfect for small teams getting started.",
+    name: "Landing Page",
+    price: "Free",
+    description: "Everything you need for a stunning landing page.",
     features: [
-      "Up to 5 team members",
-      "10GB storage",
-      "Basic analytics",
-      "Email support",
+      "Hero & CTA sections",
+      "Logo cloud",
+      "Feature showcase",
+      "Responsive design",
+      "Dark mode support",
     ],
-    cta: { href: "/login", label: "Start Free Trial" },
+    cta: { href: "https://github.com/astronomic/astronomic", label: "View on GitHub" },
   },
   {
-    name: "Pro",
-    price: "$99",
-    description: "For growing businesses that need more.",
+    name: "Full SaaS",
+    price: "Free",
+    description: "Complete boilerplate for your SaaS product.",
     features: [
-      "Up to 25 team members",
-      "100GB storage",
-      "Advanced analytics",
-      "Priority support",
-      "Custom integrations",
+      "All landing page features",
+      "Authentication layouts",
+      "Pricing sections",
+      "Privacy & legal pages",
+      "TypeScript & shadcn/ui",
+      "Production-ready",
     ],
-    cta: { href: "/login", label: "Start Free Trial" },
+    cta: { href: "https://github.com/astronomic/astronomic", label: "Get Started" },
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large organizations with custom needs.",
+    name: "Open Source",
+    price: "Free",
+    description: "MIT licensed and open for contributions.",
     features: [
-      "Unlimited team members",
-      "Unlimited storage",
-      "Custom analytics",
-      "24/7 dedicated support",
-      "SLA guarantee",
-      "On-premise option",
+      "Full source code access",
+      "Regular updates",
+      "Community support",
+      "No vendor lock-in",
+      "Commercial use allowed",
+      "Contribute on GitHub",
     ],
-    cta: { href: "/login", label: "Contact Sales" },
+    cta: { href: "https://github.com/astronomic/astronomic", label: "Star on GitHub" },
   },
 ];
 
 const testimonials = [
   {
-    quote: "SaaSify has transformed how we manage our workflow. We've seen a 40% increase in productivity.",
+    quote: "Astronomic gave us a perfect starting point. We launched our SaaS in weeks instead of months.",
     author: "Sarah Chen",
-    role: "CTO",
-    company: "TechStart",
+    role: "Founder",
+    company: "StartupLab",
   },
   {
-    quote: "The best investment we've made this year. The analytics alone have paid for itself.",
+    quote: "The clean architecture and TypeScript support made customization a breeze. Highly recommended!",
     author: "Marcus Johnson",
-    role: "CEO",
-    company: "GrowthLab",
+    role: "Lead Developer",
+    company: "DevCo",
   },
   {
-    quote: "Finally, a platform that actually delivers on its promises. Highly recommended.",
+    quote: "Finally, a boilerplate that doesn't get in your way. The Astro + shadcn combo is perfect.",
     author: "Emily Rodriguez",
-    role: "VP Engineering",
-    company: "ScaleUp Inc",
+    role: "Full Stack Developer",
+    company: "TechStart",
   },
 ];
 ---
 
-<BaseLayout title="Home" description="SaaSify - The modern SaaS platform for scaling your business">
+<BaseLayout title="Astronomic - Astro.js SaaS Boilerplate" description="Open-source Astro.js boilerplate with shadcn/ui, Tailwind CSS, and TypeScript. Launch your SaaS faster.">
   <Hero
-    badge="Now with AI-powered insights"
-    title="Build faster. Scale smarter."
-    subtitle="SaaSify is the all-in-one platform that helps teams collaborate, analyze, and grow. Join thousands of companies already using SaaSify."
-    primaryCta={{ href: "/login", label: "Get Started Free" }}
-    secondaryCta={{ href: "#features", label: "Learn More" }}
+    badge="true"
+    title="Launch your SaaS in days, not months."
+    subtitle="Astronomic is a modern, production-ready Astro.js boilerplate with shadcn/ui components, dark mode, and everything you need to build a beautiful SaaS landing page."
+    primaryCta={{ href: "https://github.com/astronomic/astronomic/archive/refs/heads/main.zip", label: "Download" }}
+    secondaryCta={{ href: "https://github.com/astronomic/astronomic", label: "GitHub" }}
   />
 
   <LogoCloud />
 
   <Features
-    title="Everything you need to succeed"
-    subtitle="Powerful features designed to help your team work more efficiently and make data-driven decisions."
+    title="Everything you need, right out of the box"
+    subtitle="Built with modern technologies and best practices to help you ship faster."
     features={features}
   />
 
   <Testimonials
-    title="Loved by teams worldwide"
+    title="Loved by developers"
     testimonials={testimonials}
   />
 
   <Pricing
-    title="Simple, transparent pricing"
-    subtitle="Choose the plan that fits your needs. All plans include a 14-day free trial."
+    title="Free forever. Open source."
+    subtitle="All features included. No hidden costs. Use it for any project, commercial or personal."
     tiers={pricingTiers}
   />
 
   <CTA
-    title="Ready to get started?"
-    description="Join thousands of teams already using SaaSify to transform their workflow. Start your free trial today."
-    cta={{ href: "/login", label: "Start Free Trial" }}
+    title="Ready to build something amazing?"
+    description="Get started with Astronomic today and launch your next SaaS project in record time."
+    cta={{ href: "https://github.com/astronomic/astronomic", label: "View on GitHub" }}
   />
 </BaseLayout>

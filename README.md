@@ -1,6 +1,6 @@
-# Astronomic - SaaS Boilerplate
+# AstroDeck - Component Library
 
-A modern SaaS landing page boilerplate built with Astro, Tailwind CSS, and shadcn/ui components.
+A modern SaaS component library built with Astro, Tailwind CSS, and shadcn/ui components.
 
 ## Prerequisites
 

@@ -1,19 +1,14 @@
 ---
 const footerLinks = {
-  product: [
-    { href: "#", label: "Features" },
-    { href: "#", label: "Pricing" },
-    { href: "#", label: "Integrations" },
-  ],
-  company: [
-    { href: "#", label: "About" },
-    { href: "#", label: "Blog" },
-    { href: "#", label: "Careers" },
-  ],
-  legal: [
+  pages: [
+    { href: "/", label: "Home" },
+    { href: "/sections", label: "Sections" },
     { href: "/privacy", label: "Privacy" },
-    { href: "#", label: "Terms" },
-    { href: "#", label: "Cookie Policy" },
+  ],
+  resources: [
+    { href: "https://astro.build", label: "Astro.js", external: true },
+    { href: "https://tailwindcss.com", label: "Tailwind CSS", external: true },
+    { href: "https://ui.shadcn.com", label: "shadcn/ui", external: true },
   ],
 };
 ---
@@ -41,13 +36,13 @@ const footerLinks = {
           <span class="font-bold">AstroDeck</span>
         </a>
         <p class="mt-4 text-sm text-muted-foreground">
-          Open-source Astro.js component library for building modern SaaS applications.
+          Open-source Astro.js starter kit with ready-to-use components. Start building faster.
         </p>
       </div>
       <div>
-        <h3 class="font-semibold mb-4">Product</h3>
+        <h3 class="font-semibold mb-4">Pages</h3>
         <ul class="space-y-2">
-          {footerLinks.product.map((link) => (
+          {footerLinks.pages.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 {link.label}
@@ -57,32 +52,45 @@ const footerLinks = {
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold mb-4">Company</h3>
+        <h3 class="font-semibold mb-4">Built With</h3>
         <ul class="space-y-2">
-          {footerLinks.company.map((link) => (
+          {footerLinks.resources.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href={link.href}
+                class="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {link.label}
+                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
               </a>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold mb-4">Legal</h3>
-        <ul class="space-y-2">
-          {footerLinks.legal.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <h3 class="font-semibold mb-4">Creator</h3>
+        <p class="text-sm text-muted-foreground">
+          Created by
+        </p>
+        <a
+          href="https://holgerkoenemann.com"
+          class="text-sm font-medium hover:text-foreground transition-colors inline-flex items-center gap-1 mt-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Holger Könemann
+          <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
       </div>
     </div>
     <div class="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-      <p>&copy; {new Date().getFullYear()} AstroDeck. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} AstroDeck. MIT License. Open Source.</p>
     </div>
   </div>
 </footer>

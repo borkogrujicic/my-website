@@ -10,9 +10,9 @@ const navItems = [
 ---
 
 <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-  <div class="container max-w-5xl mx-auto flex h-14 items-center">
-    <div class="mr-4 flex">
-      <a href="/" class="mr-6 flex items-center space-x-2">
+  <div class="container max-w-5xl mx-auto flex h-14 items-center justify-between">
+    <div class="flex">
+      <a href="/" class="flex items-center space-x-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
@@ -41,7 +41,7 @@ const navItems = [
         </a>
       ))}
     </nav>
-    <div class="flex flex-1 items-center justify-end space-x-2">
+    <div class="flex items-center space-x-2">
       <ThemeToggle />
       <a
         href="/login"

@@ -1,0 +1,258 @@
+# AstroDeck - AI Coding Assistant Rules
+
+## Project Overview
+AstroDeck is an open-source component library and starter kit for building Astro.js websites. It provides pre-built, production-ready sections (Hero, CTA, Pricing, etc.) for landing pages and SaaS websites.
+
+**Tech Stack:**
+- Framework: Astro 4.x (island architecture, zero-JS by default)
+- Styling: Tailwind CSS 3.x (utility-first)
+- UI Components: shadcn/ui (React components for interactive elements)
+- Language: TypeScript
+- Package Manager: npm
+
+## Architecture Principles
+
+### Component Organization
+- `src/components/sections/` - Pre-built page sections (Hero, CTA, Features, etc.)
+- `src/components/ui/` - shadcn/ui React components (Button, Card, etc.)
+- `src/components/` - Shared components (Header, Footer, ThemeToggle)
+- `src/layouts/` - Page templates (BaseLayout, FullWidthLayout, AuthLayout)
+- `src/pages/` - File-based routing (index.astro → /, about.astro → /about)
+
+### When to Use .astro vs .tsx
+- **Use .astro** for static content and page sections (99% of cases)
+- **Use .tsx** only for interactive components requiring client-side JavaScript (forms, toggles, modals)
+
+## Code Style & Conventions
+
+### Imports
+✅ ALWAYS use the `@/` alias for imports from src/
+```astro
+import Hero from "@/components/sections/Hero.astro";
+import { Button } from "@/components/ui/button";
+```
+
+❌ DON'T use relative paths
+```astro
+import Hero from "../components/sections/Hero.astro"; // Wrong!
+```
+
+### Styling Rules
+✅ ONLY use Tailwind utility classes
+```astro
+<div class="py-20 px-6 bg-background text-foreground">
+```
+
+❌ NEVER use inline styles or CSS-in-JS
+```astro
+<div style="padding: 80px;"> // Wrong!
+```
+
+❌ DON'T create component-specific CSS files
+```css
+/* Hero.css - Don't do this! */
+.hero { padding: 80px; }
+```
+
+### Responsive Design
+- Use mobile-first approach
+- Use Tailwind breakpoints: `sm:`, `md:`, `lg:`, `xl:`, `2xl:`
+```astro
+<h1 class="text-3xl md:text-5xl lg:text-6xl">
+```
+
+### Colors & Theming
+✅ Use CSS variables for colors (supports dark mode)
+```astro
+<div class="bg-primary text-primary-foreground">
+<p class="text-muted-foreground">
+```
+
+❌ DON'T hardcode colors
+```astro
+<div class="bg-blue-500"> // Wrong! Breaks dark mode
+```
+
+**To customize colors:** Edit CSS variables in `src/styles/globals.css`, NOT in `tailwind.config.mjs`
+
+### TypeScript
+- Always add type annotations for props
+- Use interfaces for component props
+```astro
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "" } = Astro.props;
+---
+```
+
+## Component Patterns
+
+### New Page Template
+```astro
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/sections/Hero.astro";
+---
+
+<BaseLayout
+  title="Page Title"
+  description="SEO description"
+>
+  <Hero />
+  <!-- Add more sections -->
+</BaseLayout>
+```
+
+### New Section Component Template
+```astro
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "Default Title" } = Astro.props;
+---
+
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6">{title}</h2>
+    <!-- Section content -->
+  </div>
+</section>
+```
+
+### Layout Usage
+**Choose the right layout:**
+- `BaseLayout` - Boxed layout with max-w-5xl (default for content pages)
+- `FullWidthLayout` - Full-width layout (for showcase pages like /sections)
+- `AuthLayout` - No header/footer (for login, signup pages)
+
+## Common Tasks
+
+### Adding a New Page
+1. Create `src/pages/your-page.astro`
+2. Import a layout (usually BaseLayout)
+3. Add sections as needed
+4. File becomes route automatically (your-page.astro → /your-page)
+
+### Adding a New Section
+1. Create `src/components/sections/YourSection.astro`
+2. Follow the section template pattern
+3. Use semantic HTML (`<section>`, `<article>`, etc.)
+4. Make it responsive with Tailwind breakpoints
+5. Import and use in pages
+
+### Customizing Themes
+1. Open `src/styles/globals.css`
+2. Edit CSS variables under `:root` (light mode) and `.dark` (dark mode)
+3. Don't edit `tailwind.config.mjs` for colors
+
+### Adding shadcn/ui Components
+- Components are in `src/components/ui/`
+- Import as React components
+- Wrap in `client:*` directive if interactive
+```astro
+import { Button } from "@/components/ui/button";
+<Button client:load>Click me</Button>
+```
+
+## Rules & Don'ts
+
+### ❌ Don't Do This
+1. DON'T use inline styles or style tags
+2. DON'T create separate CSS/SCSS files for components
+3. DON'T hardcode colors - use CSS variables
+4. DON'T use relative imports - use `@/` alias
+5. DON'T create .tsx files for static content
+6. DON'T modify `public/` folder structure
+7. DON'T add global styles outside of `globals.css`
+8. DON'T ignore TypeScript errors - fix them
+9. DON'T use `any` type - be specific
+10. DON'T skip responsive design - always mobile-first
+
+### ✅ Do This
+1. DO use Tailwind utility classes exclusively
+2. DO use `@/` import alias
+3. DO follow existing component patterns
+4. DO add TypeScript types for props
+5. DO test in both light and dark mode
+6. DO make components responsive
+7. DO use semantic HTML
+8. DO follow accessibility best practices (ARIA labels, semantic tags)
+9. DO keep components simple and focused
+10. DO document complex logic with comments
+
+## File Naming
+- Components: PascalCase (Hero.astro, ThemeToggle.astro)
+- Pages: kebab-case (index.astro, privacy.astro, about-us.astro)
+- Utilities: camelCase (utils.ts)
+
+## Testing & Verification
+1. Run dev server: `npm run dev`
+2. Test in browser at http://localhost:4321
+3. Test dark mode toggle
+4. Test on mobile viewport
+5. Build for production: `npm run build`
+6. Preview build: `npm run preview`
+
+## Performance Best Practices
+- Astro components are static by default (no JS shipped)
+- Use `client:load` only when absolutely necessary
+- Optimize images (use Astro's Image component when available)
+- Keep bundle size minimal
+
+## Accessibility Guidelines
+- Use semantic HTML elements
+- Add alt text to images
+- Ensure keyboard navigation works
+- Use proper heading hierarchy (h1 → h2 → h3)
+- Test with screen readers when possible
+
+## When Helping Developers
+
+### Code Generation
+- Generate clean, readable code
+- Follow ALL the conventions above
+- Add helpful comments for complex logic
+- Include TypeScript types
+- Make it responsive by default
+
+### Refactoring
+- Maintain existing patterns
+- Don't over-engineer simple components
+- Keep changes minimal and focused
+- Test after refactoring
+
+### Debugging
+- Check import paths (use `@/` alias)
+- Verify Tailwind classes are correct
+- Check for TypeScript errors
+- Ensure proper layout usage
+- Test in both light and dark mode
+
+## Project-Specific Context
+
+### Why These Choices?
+- **Astro**: Best performance for static content, island architecture for interactivity
+- **Tailwind**: Fast prototyping, easy customization, no CSS conflicts
+- **shadcn/ui**: Beautiful, accessible components that fit Tailwind workflow
+- **TypeScript**: Type safety prevents bugs, better DX
+
+### Project Goals
+1. Fast development - pre-built sections to copy/paste
+2. Easy customization - Tailwind makes styling simple
+3. Production-ready - optimized, accessible, responsive
+4. Developer-friendly - clear patterns, good docs
+
+## Additional Resources
+- Astro Docs: https://docs.astro.build
+- Tailwind Docs: https://tailwindcss.com/docs
+- shadcn/ui: https://ui.shadcn.com
+
+---
+
+**Remember**: The goal is to help developers build fast, beautiful, accessible websites. Keep code simple, follow conventions, and prioritize user experience.

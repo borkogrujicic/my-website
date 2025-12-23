@@ -1,4 +1,35 @@
 ---
+/**
+ * Features Section Component
+ *
+ * Displays a grid of feature cards with icons, titles, and descriptions.
+ * Supports multiple icon types (zap, shield, chart, users, globe, lock).
+ *
+ * @example
+ * ```astro
+ * <Features
+ *   title="Why Choose AstroDeck?"
+ *   subtitle="Everything you need to build fast"
+ *   features={[
+ *     {
+ *       icon: "zap",
+ *       title: "Lightning Fast",
+ *       description: "Built with Astro for optimal performance"
+ *     },
+ *     {
+ *       icon: "shield",
+ *       title: "Type Safe",
+ *       description: "Full TypeScript support"
+ *     }
+ *   ]}
+ * />
+ * ```
+ *
+ * @customization
+ * - Add new icons to iconPaths object (line 16)
+ * - Change grid columns by modifying grid class (line 40)
+ * - Adjust spacing with py-* and gap-* classes
+ */
 interface Feature {
   title: string;
   description: string;

@@ -834,13 +834,6 @@ If you find AstroDeck helpful, please:
 - 📝 Write about it on your blog
 - 🤝 Contribute improvements
 
----
-
-## 📬 Contact
-
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
-- **Email**: your.email@example.com
 
 ---
 

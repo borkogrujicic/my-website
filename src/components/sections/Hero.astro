@@ -1,4 +1,28 @@
 ---
+/**
+ * Hero Section Component
+ *
+ * A large, centered hero section with title, subtitle, CTA buttons, and an optional badge.
+ * Features a decorative GitHub contribution-style grid pattern background.
+ *
+ * @example
+ * ```astro
+ * <Hero
+ *   title="Build amazing products faster"
+ *   subtitle="Pre-built components for Astro.js"
+ *   badge="v1.0"
+ *   primaryCta={{ href: "/sections", label: "Browse Components" }}
+ *   secondaryCta={{ href: "https://github.com/holger1411/astrodeck", label: "GitHub" }}
+ * />
+ * ```
+ *
+ * @customization
+ * - Edit title/subtitle props for custom content
+ * - Change CTA buttons by modifying primaryCta/secondaryCta props
+ * - Remove badge by omitting the badge prop
+ * - Adjust grid pattern by modifying gridSize, squareSize variables (lines 13-16)
+ * - Customize colors via Tailwind classes (background uses currentColor for theme support)
+ */
 interface Props {
   title: string;
   subtitle: string;

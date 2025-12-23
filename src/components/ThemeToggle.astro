@@ -8,7 +8,8 @@
   aria-label="Toggle theme"
 >
   <svg
-    class="h-5 w-5 hidden dark:block"
+    id="sun-icon"
+    class="h-5 w-5"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -28,7 +29,8 @@
     <path d="m19.07 4.93-1.41 1.41" />
   </svg>
   <svg
-    class="h-5 w-5 block dark:hidden"
+    id="moon-icon"
+    class="h-5 w-5"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -42,8 +44,29 @@
 </button>
 
 <script>
+  function updateIcons() {
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+    const isDark = document.documentElement.classList.contains("dark");
+
+    if (sunIcon && moonIcon) {
+      if (isDark) {
+        // Dark mode: show sun icon (to switch to light)
+        sunIcon.style.display = "block";
+        moonIcon.style.display = "none";
+      } else {
+        // Light mode: show moon icon (to switch to dark)
+        sunIcon.style.display = "none";
+        moonIcon.style.display = "block";
+      }
+    }
+  }
+
   function initThemeToggle() {
     const toggle = document.getElementById("theme-toggle");
+
+    // Set initial icon state
+    updateIcons();
 
     toggle?.addEventListener("click", () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -55,6 +78,9 @@
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
       }
+
+      // Update icons after toggle
+      updateIcons();
     });
   }
 

@@ -28,15 +28,18 @@ Help developers ship beautiful websites faster by providing production-ready com
 
 ```
 ┌─────────────────────────────────────┐
-│         Astro (latest)              │  ← Framework (island architecture)
+│         Astro v5.x (latest)         │  ← Framework (island architecture)
 ├─────────────────────────────────────┤
-│       Tailwind CSS (latest)         │  ← Styling (utility-first)
+│    Tailwind CSS v4.x (latest)       │  ← Styling (utility-first)
+│         via @tailwindcss/vite       │  ← Uses Vite plugin (NOT Astro integration)
 ├─────────────────────────────────────┤
 │    shadcn/ui + Radix UI             │  ← UI Components (React)
 ├─────────────────────────────────────┤
 │         TypeScript (latest)         │  ← Type Safety
 └─────────────────────────────────────┘
 ```
+
+**IMPORTANT:** This project uses **Tailwind CSS v4** with the new **@tailwindcss/vite** plugin. Do NOT suggest using `@astrojs/tailwind` integration (which only supports v3).
 
 ### Why This Stack?
 
@@ -46,9 +49,11 @@ Help developers ship beautiful websites faster by providing production-ready com
 - File-based routing = intuitive page creation
 - Works with React, Vue, Svelte (we use React for shadcn/ui)
 
-**Tailwind CSS:**
-- Rapid prototyping with utility classes
-- No CSS conflicts or naming issues
+**Tailwind CSS v4:**
+- Modern CSS-native configuration with `@theme` directive
+- OKLCH color space for better color accuracy
+- Vite plugin integration for improved performance
+- No more `tailwind.config.mjs` - configuration is in CSS
 - Easy theme customization via CSS variables
 - Excellent responsive design workflow
 

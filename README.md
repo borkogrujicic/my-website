@@ -39,6 +39,7 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 - [Building for Production](#-building-for-production)
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
+- [AI-Friendly Development](#-ai-friendly-development)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -752,6 +753,110 @@ content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}']
 - **Documentation**: [docs.astro.build](https://docs.astro.build)
 - **GitHub Issues**: [Report a bug](https://github.com/yourusername/astrodeck/issues)
 - **Discord**: [Join Astro community](https://astro.build/chat)
+
+---
+
+## 🤖 AI-Friendly Development
+
+AstroDeck is designed to work seamlessly with AI coding assistants like Claude, ChatGPT, Cursor, GitHub Copilot, and others. We've included specialized documentation to help AI tools understand the project structure and provide better assistance.
+
+### AI Documentation Files
+
+#### `.cursorrules`
+**Purpose:** Configuration file for AI coding assistants (Cursor, Cline, etc.)
+
+Contains:
+- Project overview and tech stack
+- Code style conventions and patterns
+- Import aliases and file organization
+- Do's and Don'ts for code generation
+- Component templates and examples
+- Testing guidelines
+
+**Usage:** AI assistants automatically read this file to understand project conventions.
+
+#### `AI.md`
+**Purpose:** Comprehensive guide specifically written for AI assistants
+
+Contains:
+- Detailed architecture overview with diagrams
+- Technology stack explanation (Astro v5, Tailwind v4)
+- Design system documentation (colors, breakpoints)
+- Common development tasks with code examples
+- Component patterns and best practices
+- Pitfalls to avoid and debugging checklist
+- Quick reference for imports and patterns
+
+**Usage:** Provides deep context for complex questions and implementations.
+
+#### `CONTRIBUTING.md` (AI Section)
+**Purpose:** Contribution guidelines with dedicated AI assistant section
+
+Contains:
+- Development setup instructions
+- Coding guidelines specific to this project
+- File location guide for common tasks
+- Pull request process
+- Bug reporting templates
+
+**Usage:** Helps AI assistants guide developers through contributions.
+
+### Benefits of AI-Friendly Documentation
+
+**For Developers:**
+- ✅ Faster code generation that follows project conventions
+- ✅ Consistent code style across AI-assisted changes
+- ✅ Better suggestions from AI tools
+- ✅ Reduced debugging time
+- ✅ Easier onboarding for new contributors
+
+**For AI Assistants:**
+- 🎯 Understanding of project structure and patterns
+- 🎯 Knowledge of tech stack specifics (Tailwind v4, Astro v5)
+- 🎯 Awareness of coding conventions (imports, styling, types)
+- 🎯 Context for generating appropriate solutions
+- 🎯 Ability to provide better explanations
+
+### How to Use
+
+When working with AI assistants on AstroDeck:
+
+1. **Ask specific questions** - AI tools have context from documentation files
+2. **Reference conventions** - AI will follow the patterns defined in `.cursorrules`
+3. **Request code generation** - AI understands component structure and will generate compatible code
+4. **Debug with context** - AI knows common pitfalls and can suggest fixes
+
+### Example Interactions
+
+```
+You: "Create a new pricing section component"
+AI: *Generates component following AstroDeck patterns*
+    - Uses @/ imports
+    - Includes TypeScript types
+    - Applies proper styling with Tailwind v4
+    - Follows responsive design patterns
+    - Matches existing component structure
+```
+
+```
+You: "Why am I getting Tailwind errors?"
+AI: *Checks against AI.md knowledge*
+    - Recognizes Tailwind v4 is used
+    - Knows about @theme configuration
+    - Suggests OKLCH color format
+    - References globals.css structure
+```
+
+### Contributing AI Improvements
+
+If you find ways to improve AI assistance for AstroDeck:
+
+1. Suggest updates to `.cursorrules` for better conventions
+2. Add examples to `AI.md` for common scenarios
+3. Report AI-related issues or confusions
+4. Share successful AI interaction patterns
+
+**We believe AI-assisted development should be a first-class experience!**
 
 ---
 

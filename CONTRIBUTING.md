@@ -227,10 +227,15 @@ Use mobile-first approach with Tailwind breakpoints:
 ### Quick Context for AI
 
 **Project Type:** Component library for Astro.js
-**Stack:** Astro (latest) + Tailwind CSS (latest) + shadcn/ui + TypeScript (latest)
+**Stack:** Astro v5.x (latest) + Tailwind CSS v4.x (latest) + shadcn/ui + TypeScript (latest)
 **Purpose:** Pre-built sections for landing pages
 
-**CRITICAL:** Always use the latest versions of Astro and Tailwind CSS. Never suggest or use outdated versions.
+**CRITICAL:**
+- Always use the latest versions of Astro and Tailwind CSS v4
+- This project uses **@tailwindcss/vite** plugin (NOT @astrojs/tailwind)
+- Theme configuration is in CSS using `@theme` directive
+- Colors use OKLCH format (NOT HSL)
+- No `tailwind.config.mjs` file (v4 uses CSS-based configuration)
 
 ### Key Rules When Generating Code
 

@@ -4,13 +4,13 @@
 AstroDeck is an open-source component library and starter kit for building Astro.js websites. It provides pre-built, production-ready sections (Hero, CTA, Pricing, etc.) for landing pages and SaaS websites.
 
 **Tech Stack:**
-- Framework: Astro (latest version - always use latest)
-- Styling: Tailwind CSS (latest version - always use latest)
+- Framework: Astro (latest version - currently v5.x)
+- Styling: Tailwind CSS v4 (latest - using Vite plugin)
 - UI Components: shadcn/ui (React components for interactive elements)
 - Language: TypeScript (latest version)
 - Package Manager: npm
 
-**IMPORTANT: Always use latest versions of Astro and Tailwind CSS. Never use outdated versions like v3 or v4.**
+**IMPORTANT: Always use latest versions of Astro and Tailwind CSS v4. This project uses the new Vite plugin approach (@tailwindcss/vite) instead of the old Astro integration.**
 
 ## Architecture Principles
 

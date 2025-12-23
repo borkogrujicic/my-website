@@ -1,6 +1,6 @@
 # AstroDeck
 
-**A modern, open-source component library and starter kit for building stunning Astro.js websites in minutes.**
+**A modern, open-source component library and starter kit for building stunning Astro.js websites in minutes. Built AI-friendly for seamless development with Claude, Cursor, and other coding assistants.**
 
 AstroDeck provides pre-built, production-ready components that help you launch landing pages, SaaS websites, and marketing sites faster. Built with [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com), and [shadcn/ui](https://ui.shadcn.com) components.
 
@@ -10,6 +10,7 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 
 ## 🚀 Features
 
+- **🤖 AI-Friendly Development** - Comprehensive AI documentation (`.cursorrules`, `AI.md`) helps coding assistants understand your project
 - **15+ Pre-built Sections** - Heroes, CTAs, Pricing Tables, Testimonials, Newsletters, and more
 - **Multiple Layout Templates** - Boxed, Full-Width, and Auth layouts for different page types
 - **Fully Responsive** - Mobile-first design that looks great on all devices

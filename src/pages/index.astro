@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/sections/Hero.astro";
 import LogoCloud from "@/components/sections/LogoCloud.astro";
 import Features from "@/components/sections/Features.astro";
+import AIFeature from "@/components/sections/AIFeature.astro";
 
 const features = [
   {
@@ -42,8 +43,8 @@ const features = [
   <Hero
     badge="true"
     title="Your Astro project, ready to go."
-    subtitle="AstroDeck is a production-ready Astro.js starter kit with pre-built components, shadcn/ui, dark mode, and TypeScript. Download, install, and start building right away."
-    primaryCta={{ href: "https://github.com/holger1411/astrodeck/archive/refs/tags/v1.0.zip", label: "Download" }}
+    subtitle="AstroDeck is a production-ready Astro.js starter kit with pre-built components, shadcn/ui, dark mode, and TypeScript. Built AI-friendly for seamless development with Claude, Cursor, and other coding assistants."
+    primaryCta={{ href: "/sections", label: "Browse Components" }}
     secondaryCta={{ href: "https://github.com/holger1411/astrodeck", label: "GitHub" }}
   />
 
@@ -54,4 +55,6 @@ const features = [
     subtitle="Built with modern technologies and best practices to help you ship faster."
     features={features}
   />
+
+  <AIFeature />
 </BaseLayout>

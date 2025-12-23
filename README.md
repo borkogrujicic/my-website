@@ -48,7 +48,7 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 
 Before you begin, ensure you have the following installed on your machine:
 
-- **Node.js** - Version 18.17.0 or higher
+- **Node.js** - Version 18.17.0 or higher (latest LTS recommended)
 - **npm** - Comes with Node.js (or use yarn/pnpm)
 - **Git** - For cloning the repository
 
@@ -59,6 +59,8 @@ node --version
 ```
 
 If you need to install or update Node.js, visit [nodejs.org](https://nodejs.org).
+
+**Important:** AstroDeck uses the **latest versions** of Astro and Tailwind CSS. Always run `npm install` to get the most recent versions.
 
 ---
 
@@ -130,11 +132,13 @@ This command:
 **Expected output:**
 
 ```
-  🚀  astro  v4.15.0 started in 234ms
+  🚀  astro  v5.x.x started in 234ms
 
   ┃ Local    http://localhost:4321/
   ┃ Network  use --host to expose
 ```
+
+**Note:** Version numbers will vary based on your installed Astro version. AstroDeck always uses the latest stable release.
 
 ### Alternative Start Command
 

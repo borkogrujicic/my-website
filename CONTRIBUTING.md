@@ -227,8 +227,10 @@ Use mobile-first approach with Tailwind breakpoints:
 ### Quick Context for AI
 
 **Project Type:** Component library for Astro.js
-**Stack:** Astro + Tailwind + shadcn/ui + TypeScript
+**Stack:** Astro (latest) + Tailwind CSS (latest) + shadcn/ui + TypeScript (latest)
 **Purpose:** Pre-built sections for landing pages
+
+**CRITICAL:** Always use the latest versions of Astro and Tailwind CSS. Never suggest or use outdated versions.
 
 ### Key Rules When Generating Code
 

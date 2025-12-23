@@ -28,13 +28,13 @@ Help developers ship beautiful websites faster by providing production-ready com
 
 ```
 ┌─────────────────────────────────────┐
-│         Astro 4.x                   │  ← Framework (island architecture)
+│         Astro (latest)              │  ← Framework (island architecture)
 ├─────────────────────────────────────┤
-│       Tailwind CSS 3.x              │  ← Styling (utility-first)
+│       Tailwind CSS (latest)         │  ← Styling (utility-first)
 ├─────────────────────────────────────┤
 │    shadcn/ui + Radix UI             │  ← UI Components (React)
 ├─────────────────────────────────────┤
-│         TypeScript                  │  ← Type Safety
+│         TypeScript (latest)         │  ← Type Safety
 └─────────────────────────────────────┘
 ```
 

@@ -10,7 +10,7 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 
 ## 🚀 Features
 
-- **🤖 AI-Friendly Development** - Comprehensive AI documentation (`.cursorrules`, `AI.md`) helps coding assistants understand your project
+- **🤖 AI-Friendly Development** - Comprehensive AI documentation (`.cursorrules`, `AI.md`) plus a dedicated Claude Code Agent helps you build faster
 - **15+ Pre-built Sections** - Heroes, CTAs, Pricing Tables, Testimonials, Newsletters, and more
 - **Multiple Layout Templates** - Boxed, Full-Width, and Auth layouts for different page types
 - **Fully Responsive** - Mobile-first design that looks great on all devices
@@ -41,6 +41,8 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
 - [AI-Friendly Development](#-ai-friendly-development)
+  - [Claude Code Agent](#claude-code-agent)
+  - [AI Documentation Files](#ai-documentation-files)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -760,6 +762,101 @@ content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}']
 ## 🤖 AI-Friendly Development
 
 AstroDeck is designed to work seamlessly with AI coding assistants like Claude, ChatGPT, Cursor, GitHub Copilot, and others. We've included specialized documentation to help AI tools understand the project structure and provide better assistance.
+
+### Claude Code Agent
+
+AstroDeck includes a dedicated **Claude Code Agent** that acts as your personal project expert. The agent understands AstroDeck's architecture, conventions, and best practices—helping you build faster while maintaining quality.
+
+#### What the Agent Does
+
+| Category | Features |
+|----------|----------|
+| **🔧 Development** | Create pages, components, layouts following project patterns |
+| **🎨 Design System** | Maintain color, spacing, and typography consistency |
+| **🛡️ Security** | Warn about XSS, missing SRI, insecure resources |
+| **♿ Accessibility** | Check WCAG compliance, contrast ratios, ARIA labels |
+| **🔍 SEO** | Verify meta tags, OpenGraph, heading hierarchy |
+| **⚡ Performance** | Identify unoptimized images, missing lazy loading |
+
+#### Using the Agent
+
+The agent is located at `.claude/agents/astrodeck.md` and works automatically with [Claude Code](https://claude.ai/code).
+
+**Automatic Usage:**
+When you work on AstroDeck with Claude Code, the agent activates automatically for relevant tasks.
+
+**Explicit Usage:**
+```
+> Use the astrodeck agent to create a new pricing page
+> Have astrodeck review my component for accessibility issues
+> Ask astrodeck to check the SEO of this page
+```
+
+**Model Selection:**
+The agent supports different models based on your needs:
+- **Sonnet** (default): Balanced for most development tasks
+- **Opus**: Complex architectural decisions and deep analysis
+- **Haiku**: Quick lookups and simple operations
+
+```
+> Use astrodeck with opus to review the project architecture
+```
+
+#### Agent Capabilities
+
+**Proactive Warnings:**
+The agent warns you before potential issues become problems:
+
+```
+🛡️ SECURITY WARNING
+Issue: External script without Subresource Integrity (SRI)
+Risk: Script could be modified by attackers
+Fix: Add integrity attribute or host script locally
+
+♿ ACCESSIBILITY WARNING  
+Issue: Image missing alt text
+Impact: Screen readers cannot describe the image
+Fix: Add descriptive alt attribute
+
+🔍 SEO WARNING
+Issue: Page missing OpenGraph meta tags
+Impact: Poor social media sharing appearance
+Fix: Add og:title, og:description, og:image
+```
+
+**DRY Enforcement:**
+The agent detects code duplication and suggests improvements:
+
+```
+⚠️ DRY WARNING
+Similar code found in:
+- src/components/sections/Hero.astro
+- src/components/sections/CTA.astro
+
+Recommendation: Extract into a reusable component
+```
+
+#### Recommended MCP Servers
+
+For the best experience, the agent can leverage these optional MCP servers:
+
+**Context7** (Documentation):
+```json
+// For up-to-date Astro, Tailwind, React, shadcn/ui docs
+// https://github.com/upstash/context7
+```
+
+**Lighthouse MCP** (Audits):
+```json
+{
+  "mcpServers": {
+    "lighthouse": {
+      "command": "npx",
+      "args": ["@danielsogl/lighthouse-mcp@latest"]
+    }
+  }
+}
+```
 
 ### AI Documentation Files
 

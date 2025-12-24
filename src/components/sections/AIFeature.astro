@@ -30,6 +30,20 @@
               </svg>
             </div>
             <div>
+              <h3 class="font-semibold mb-1">Claude Code Agent Included</h3>
+              <p class="text-sm text-muted-foreground">
+                A dedicated AI agent helps you set up, customize, and build with AstroDeck—ensuring consistency, security, and best practices
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="mt-1 flex-shrink-0">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
               <h3 class="font-semibold mb-1">Specialized AI Documentation</h3>
               <p class="text-sm text-muted-foreground">
                 .cursorrules, AI.md, and dedicated CONTRIBUTING.md sections guide AI assistants
@@ -83,33 +97,35 @@
       <div class="relative">
         <div class="rounded-lg border bg-card p-8 shadow-sm">
           <div class="space-y-4">
+            <!-- Claude Code Agent visualization -->
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-xs text-muted-foreground">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span>.claude/agents/astrodeck.md</span>
+              </div>
+              <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
+                <div class="text-muted-foreground"># AstroDeck Agent</div>
+                <div class="text-foreground">🛡️ Security checks</div>
+                <div class="text-foreground">♿ Accessibility audits</div>
+                <div class="text-foreground">🔍 SEO optimization</div>
+                <div class="text-foreground">⚡ Performance tips</div>
+              </div>
+            </div>
+
             <!-- Code snippet visualization -->
             <div class="space-y-2">
               <div class="flex items-center gap-2 text-xs text-muted-foreground">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                <span>.cursorrules</span>
-              </div>
-              <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
-                <div class="text-muted-foreground"># AstroDeck - AI Rules</div>
-                <div class="text-foreground">Framework: Astro v5.x</div>
-                <div class="text-foreground">Styling: Tailwind CSS v4</div>
-                <div class="text-foreground">UI: shadcn/ui + TypeScript</div>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                <span>AI.md</span>
+                <span>.cursorrules + AI.md</span>
               </div>
               <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
                 <div class="text-foreground">✓ Architecture overview</div>
                 <div class="text-foreground">✓ Component patterns</div>
-                <div class="text-foreground">✓ Common tasks & examples</div>
+                <div class="text-foreground">✓ Code conventions</div>
               </div>
             </div>
 
@@ -117,7 +133,7 @@
             <div class="pt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <div class="flex items-center gap-1">
                 <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-                <span>AI-ready</span>
+                <span>AI-ready with Claude Code Agent</span>
               </div>
             </div>
           </div>

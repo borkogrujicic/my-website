@@ -860,35 +860,53 @@ For the best experience, the agent can leverage these optional MCP servers:
 
 ### AI Documentation Files
 
-AstroDeck follows the **AGENTS.md standard** - a single source of truth for all AI coding assistants.
+AstroDeck follows the **[AGENTS.md standard](https://agents.md)** – an open format for guiding AI coding agents, used by **60,000+ open-source projects** and stewarded by the Linux Foundation.
+
+> *Think of AGENTS.md as a README for AI agents: a dedicated, predictable place to provide context and instructions.*
+
+#### Supported AI Coding Assistants
+
+| Tool | Support | Notes |
+|------|---------|-------|
+| [OpenAI Codex](https://openai.com/codex/) | ✅ Native | Reads AGENTS.md automatically |
+| [GitHub Copilot](https://github.com/features/copilot) | ✅ Native | Coding agent supports AGENTS.md |
+| [Cursor](https://cursor.com) | ✅ Native | Reads AGENTS.md and symlinks |
+| [Google Jules](https://jules.google) | ✅ Native | Full AGENTS.md support |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | ✅ Config | Via `contextFileName` setting |
+| [Windsurf](https://windsurf.com) | ✅ Native | Reads AGENTS.md automatically |
+| [Zed](https://zed.dev) | ✅ Native | Priority-based file loading |
+| [Claude Code](https://claude.ai/code) | ✅ Symlink | Via `CLAUDE.md → AGENTS.md` |
+| [Aider](https://aider.chat) | ✅ Config | Via `read: AGENTS.md` |
+
+**Plus many more:** Factory, Amp, RooCode, Devin, Kilo Code, Warp, and others.  
+→ [See full list at agents.md](https://agents.md)
+
+#### File Structure
+
+```
+astrodeck/
+├── AGENTS.md              # 📄 Single Source of Truth (all AI tools)
+├── .cursorrules           # 🔗 Symlink → AGENTS.md (Cursor)
+├── CLAUDE.md              # 🔗 Symlink → AGENTS.md (Claude Code)
+└── .claude/agents/
+    └── astrodeck.md       # 🤖 Claude Code Agent (enhanced features)
+```
 
 #### `AGENTS.md` (Primary)
-**Purpose:** Universal guidelines for all AI coding assistants
 
-Contains:
-- Project overview and tech stack
+The main configuration file containing:
+- Project overview and tech stack (Astro v5, Tailwind v4)
 - Code conventions and patterns
 - Import aliases and file organization
 - Do's and Don'ts for code generation
-- Component templates and examples
-- Debugging checklists
+- Component templates and debugging checklists
 
-**Supported by:** GitHub Copilot, Cursor, OpenAI Codex, Google Jules, Amp, and 20,000+ repositories.
+#### `.claude/agents/astrodeck.md` (Claude Code Agent)
 
-#### `.cursorrules` → `AGENTS.md`
-**Purpose:** Symlink to AGENTS.md for Cursor IDE compatibility
-
-#### `CLAUDE.md` → `AGENTS.md`
-**Purpose:** Symlink to AGENTS.md for Claude Code compatibility
-
-#### `.claude/agents/astrodeck.md`
-**Purpose:** Claude Code-specific agent with enhanced capabilities
-
-Contains:
-- Agent persona and identity
+Enhanced agent with AstroDeck-specific capabilities:
 - Proactive security, accessibility, SEO warnings
+- DRY enforcement and code review
 - MCP server recommendations (Context7, Lighthouse)
-- DRY enforcement and code review features
 
 **Usage:** Automatically activated when using Claude Code on AstroDeck.
 

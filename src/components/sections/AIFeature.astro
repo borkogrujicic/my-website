@@ -3,15 +3,15 @@
  * AI Feature Section
  *
  * Highlights the AI-friendly development features of AstroDeck.
- * Clean, minimal design with icon and text layout.
+ * Built on the AGENTS.md standard supported by 60,000+ repositories.
  */
 ---
 
 <section class="py-24 px-6 bg-muted/30">
-  <div class="container max-w-5xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Content -->
-      <div class="space-y-6">
+  <div class="container max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Left Column: AGENTS.md Standard + Claude Code Agent -->
+      <div class="space-y-8">
         <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
           AI-Powered Development
         </div>
@@ -19,128 +19,179 @@
           Built for AI coding assistants
         </h2>
         <p class="text-lg text-muted-foreground leading-relaxed">
-          AstroDeck includes comprehensive AI documentation to help coding assistants like Claude, Cursor, and GitHub Copilot understand your project structure and provide better assistance.
+          AstroDeck follows the <a href="https://agents.md" target="_blank" rel="noopener" class="text-primary hover:underline font-medium">AGENTS.md standard</a> – an open format for guiding AI coding agents, used by <strong>60,000+ open-source projects</strong> and stewarded by the Linux Foundation.
         </p>
 
-        <div class="space-y-4 pt-4">
-          <div class="flex items-start gap-3">
-            <div class="mt-1 flex-shrink-0">
+        <!-- AGENTS.md Info -->
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
               <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold mb-1">Claude Code Agent Included</h3>
-              <p class="text-sm text-muted-foreground">
-                A dedicated AI agent helps you set up, customize, and build with AstroDeck—ensuring consistency, security, and best practices
-              </p>
+              <h3 class="font-semibold">AGENTS.md</h3>
+              <p class="text-sm text-muted-foreground">Single source of truth for all AI tools</p>
             </div>
           </div>
-
-          <div class="flex items-start gap-3">
-            <div class="mt-1 flex-shrink-0">
-              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-1">Specialized AI Documentation</h3>
-              <p class="text-sm text-muted-foreground">
-                .cursorrules, AI.md, and dedicated CONTRIBUTING.md sections guide AI assistants
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <div class="mt-1 flex-shrink-0">
-              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-1">Consistent Code Generation</h3>
-              <p class="text-sm text-muted-foreground">
-                AI tools understand project conventions and generate compatible code automatically
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <div class="mt-1 flex-shrink-0">
-              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-1">Faster Development</h3>
-              <p class="text-sm text-muted-foreground">
-                Reduce debugging time and get better suggestions that follow best practices
-              </p>
-            </div>
+          <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
+            <div class="text-muted-foreground"># Project conventions</div>
+            <div class="text-foreground">✓ Tech stack (Astro v5, Tailwind v4)</div>
+            <div class="text-foreground">✓ Code patterns & imports</div>
+            <div class="text-foreground">✓ Component templates</div>
+            <div class="text-foreground">✓ Do's and Don'ts</div>
           </div>
         </div>
 
-        <div class="pt-4">
-          <a
-            href="https://github.com/holger1411/astrodeck#-ai-friendly-development"
-            class="inline-flex items-center text-sm font-medium text-primary hover:underline"
-          >
-            Learn more about AI-friendly development
-            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </a>
+        <!-- Claude Code Agent -->
+        <div class="rounded-lg border bg-card p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold">Claude Code Agent</h3>
+              <p class="text-sm text-muted-foreground">Enhanced assistant with proactive warnings</p>
+            </div>
+          </div>
+          <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
+            <div class="text-muted-foreground"># .claude/agents/astrodeck.md</div>
+            <div class="text-foreground">🛡️ Security checks</div>
+            <div class="text-foreground">♿ Accessibility audits</div>
+            <div class="text-foreground">🔍 SEO optimization</div>
+            <div class="text-foreground">⚡ Performance tips</div>
+          </div>
         </div>
       </div>
 
-      <!-- Visual Element -->
-      <div class="relative">
-        <div class="rounded-lg border bg-card p-8 shadow-sm">
-          <div class="space-y-4">
-            <!-- Claude Code Agent visualization -->
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <span>.claude/agents/astrodeck.md</span>
-              </div>
-              <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
-                <div class="text-muted-foreground"># AstroDeck Agent</div>
-                <div class="text-foreground">🛡️ Security checks</div>
-                <div class="text-foreground">♿ Accessibility audits</div>
-                <div class="text-foreground">🔍 SEO optimization</div>
-                <div class="text-foreground">⚡ Performance tips</div>
-              </div>
-            </div>
+      <!-- Right Column: Supported Tools -->
+      <div class="space-y-6">
+        <h3 class="text-xl font-semibold">Works with your favorite AI tools</h3>
+        <p class="text-muted-foreground">
+          One configuration file, compatible with the entire AI coding ecosystem.
+        </p>
 
-            <!-- Code snippet visualization -->
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                <span>.cursorrules + AI.md</span>
+        <!-- Tool Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- OpenAI Codex -->
+          <a href="https://openai.com/codex/" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center font-bold text-lg">
+                ◯
               </div>
-              <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
-                <div class="text-foreground">✓ Architecture overview</div>
-                <div class="text-foreground">✓ Component patterns</div>
-                <div class="text-foreground">✓ Code conventions</div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">OpenAI Codex</div>
+                <div class="text-xs text-muted-foreground">Native support</div>
               </div>
             </div>
+          </a>
 
-            <!-- AI icon visualization -->
-            <div class="pt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-              <div class="flex items-center gap-1">
-                <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-                <span>AI-ready with Claude Code Agent</span>
+          <!-- GitHub Copilot -->
+          <a href="https://github.com/features/copilot" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">GitHub Copilot</div>
+                <div class="text-xs text-muted-foreground">Coding Agent</div>
               </div>
             </div>
-          </div>
+          </a>
+
+          <!-- Cursor -->
+          <a href="https://cursor.com" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center font-bold text-lg">
+                ⌘
+              </div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">Cursor</div>
+                <div class="text-xs text-muted-foreground">Native support</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Google Jules -->
+          <a href="https://jules.google" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="h-6 w-6" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">Google Jules</div>
+                <div class="text-xs text-muted-foreground">Native support</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Windsurf -->
+          <a href="https://windsurf.com" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center font-bold text-lg">
+                🏄
+              </div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">Windsurf</div>
+                <div class="text-xs text-muted-foreground">Agentic IDE</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Claude Code -->
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="group rounded-lg border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-medium group-hover:text-primary transition-colors">Claude Code</div>
+                <div class="text-xs text-muted-foreground">+ Custom Agent</div>
+              </div>
+            </div>
+          </a>
         </div>
 
-        <!-- Decorative glow effect -->
-        <div class="absolute -inset-4 bg-gradient-to-r from-primary/10 to-primary/5 blur-3xl -z-10 opacity-50"></div>
+        <!-- More Tools Link -->
+        <div class="pt-4 space-y-4">
+          <p class="text-sm text-muted-foreground">
+            Plus: Zed, Aider, Factory, Amp, RooCode, Gemini CLI, and many more.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://agents.md"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-sm font-medium text-primary hover:underline"
+            >
+              View all supported tools at agents.md
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/holger1411/astrodeck#-ai-friendly-development"
+              class="inline-flex items-center text-sm font-medium text-primary hover:underline"
+            >
+              Learn more in README
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

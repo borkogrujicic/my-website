@@ -74,10 +74,10 @@ body {
 }
 
 mark {
-  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.3em;
-  background-position: 0 88%;
+  background: none;
   color: inherit;
-  padding: 0 0.1em;
+  text-decoration: underline;
+  text-decoration-color: var(--color-foreground);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }

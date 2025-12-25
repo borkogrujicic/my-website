@@ -2,14 +2,12 @@
 ---
 
 <button
-  id="theme-toggle"
+  class="theme-toggle inline-flex items-center justify-center rounded-md h-9 w-9 text-foreground/60 hover:text-foreground hover:bg-accent transition-colors"
   type="button"
-  class="inline-flex items-center justify-center rounded-md h-9 w-9 text-foreground/60 hover:text-foreground hover:bg-accent transition-colors"
   aria-label="Toggle theme"
 >
   <svg
-    id="sun-icon"
-    class="h-5 w-5"
+    class="sun-icon h-5 w-5"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -29,8 +27,7 @@
     <path d="m19.07 4.93-1.41 1.41" />
   </svg>
   <svg
-    id="moon-icon"
-    class="h-5 w-5"
+    class="moon-icon h-5 w-5"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -44,49 +41,59 @@
 </button>
 
 <script>
-  function updateIcons() {
-    const sunIcon = document.getElementById("sun-icon");
-    const moonIcon = document.getElementById("moon-icon");
+  function updateAllIcons() {
     const isDark = document.documentElement.classList.contains("dark");
+    const allSunIcons = document.querySelectorAll(".sun-icon");
+    const allMoonIcons = document.querySelectorAll(".moon-icon");
 
-    if (sunIcon && moonIcon) {
+    allSunIcons.forEach(sunIcon => {
       if (isDark) {
         // Dark mode: show sun icon (to switch to light)
         sunIcon.style.display = "block";
+      } else {
+        // Light mode: hide sun icon
+        sunIcon.style.display = "none";
+      }
+    });
+
+    allMoonIcons.forEach(moonIcon => {
+      if (isDark) {
+        // Dark mode: hide moon icon
         moonIcon.style.display = "none";
       } else {
         // Light mode: show moon icon (to switch to dark)
-        sunIcon.style.display = "none";
         moonIcon.style.display = "block";
       }
-    }
+    });
   }
 
-  function initThemeToggle() {
-    const toggle = document.getElementById("theme-toggle");
+  function initThemeToggles() {
+    const toggles = document.querySelectorAll(".theme-toggle");
 
-    // Set initial icon state
-    updateIcons();
+    // Set initial icon state for all toggles
+    updateAllIcons();
 
-    toggle?.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.contains("dark");
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
 
-      if (isDark) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
+        if (isDark) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
 
-      // Update icons after toggle
-      updateIcons();
+        // Update all icons after toggle
+        updateAllIcons();
+      });
     });
   }
 
   // Run on initial load
-  initThemeToggle();
+  initThemeToggles();
 
   // Re-run after View Transitions navigation
-  document.addEventListener("astro:after-swap", initThemeToggle);
+  document.addEventListener("astro:after-swap", initThemeToggles);
 </script>

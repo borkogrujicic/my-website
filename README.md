@@ -73,9 +73,9 @@ If you need to install or update Node.js, visit [nodejs.org](https://nodejs.org)
 Get AstroDeck running in 3 steps:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/astrodeck.git
-cd astrodeck
+# 1. Create a new project using degit
+npx degit holger1411/astrodeck my-project
+cd my-project
 
 # 2. Install dependencies
 npm install
@@ -90,11 +90,44 @@ Open your browser and navigate to `http://localhost:4321` to see your site!
 
 ## 📦 Installation
 
-### Option 1: Clone from GitHub (Recommended)
+### Option 1: Using degit (Recommended)
+
+The fastest way to get started - no git history, clean project:
+
+```bash
+# Create a new project
+npx degit holger1411/astrodeck my-project
+cd my-project
+
+# Install dependencies
+npm install
+
+# Start developing
+npm run dev
+```
+
+### Option 2: Download Release ZIP
+
+Download the latest release directly:
+
+```bash
+# Download the latest version
+wget https://github.com/holger1411/astrodeck/archive/refs/tags/v1.2.0.zip
+
+# Extract
+unzip v1.2.0.zip
+cd astrodeck-1.2.0
+
+# Install and run
+npm install
+npm run dev
+```
+
+### Option 3: Clone from GitHub
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/astrodeck.git
+git clone https://github.com/holger1411/astrodeck.git my-project
 
 # Navigate into the directory
 cd astrodeck

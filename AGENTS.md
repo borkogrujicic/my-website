@@ -5,6 +5,26 @@
 
 ---
 
+## ⚠️ IMPORTANT: Project-Specific Customizations
+
+**Before following the guidelines below, ALWAYS check `PROJECT.md` first.**
+
+The `PROJECT.md` file contains **project-specific customizations that override these defaults**:
+- Custom colors, fonts, and design tokens
+- Brand voice and content guidelines
+- Project-specific rules and workflows
+- Business context and goals
+
+**Priority Hierarchy:**
+1. **PROJECT.md** (highest) - Your project-specific instructions
+2. **AGENTS.md** (this file) - AstroDeck defaults and patterns
+3. **Component documentation** - Individual component guidelines
+
+If `PROJECT.md` says "use vibrant blue for primary color" but this file says "use Astro blue,"
+the **PROJECT.md instruction wins**.
+
+---
+
 ## Project Overview
 
 **AstroDeck** is an open-source component library and starter kit for building Astro.js websites. It provides pre-built, production-ready sections for landing pages and SaaS websites.

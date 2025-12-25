@@ -908,7 +908,7 @@ AstroDeck follows the **[AGENTS.md standard](https://agents.md)** – an open fo
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | ✅ Config | Via `contextFileName` setting |
 | [Windsurf](https://windsurf.com) | ✅ Native | Reads AGENTS.md automatically |
 | [Zed](https://zed.dev) | ✅ Native | Priority-based file loading |
-| [Claude Code](https://claude.ai/code) | ✅ Symlink | Via `CLAUDE.md → AGENTS.md` |
+| [Claude Code](https://claude.ai/code) | ✅ Symlink | Via `PROJECT.md → AGENTS.md` |
 | [Aider](https://aider.chat) | ✅ Config | Via `read: AGENTS.md` |
 
 **Plus many more:** Factory, Amp, RooCode, Devin, Kilo Code, Warp, and others.  
@@ -918,14 +918,56 @@ AstroDeck follows the **[AGENTS.md standard](https://agents.md)** – an open fo
 
 ```
 astrodeck/
-├── AGENTS.md              # 📄 Single Source of Truth (all AI tools)
+├── PROJECT.md              # 🎯 YOUR project customizations (HIGHEST PRIORITY)
+├── AGENTS.md              # 📄 AstroDeck defaults (all AI tools)
 ├── .cursorrules           # 🔗 Symlink → AGENTS.md (Cursor)
-├── CLAUDE.md              # 🔗 Symlink → AGENTS.md (Claude Code)
 └── .claude/agents/
     └── astrodeck.md       # 🤖 Claude Code Agent (enhanced features)
 ```
 
-#### `AGENTS.md` (Primary)
+#### `PROJECT.md` - Your Project Customization File ⭐
+
+**Priority: HIGHEST** - Overrides all other AI documentation.
+
+Use this file to customize AstroDeck for YOUR project:
+
+**🎨 Design Customizations:**
+```markdown
+## Colors
+Primary color: Vibrant electric blue (#0066FF) instead of default blue
+```
+
+**✍️ Content Guidelines:**
+```markdown
+## Tone of Voice
+- Style: Professional but friendly, conversational
+- Audience: Tech-savvy startup founders
+- Language: US English, avoid jargon
+```
+
+**🚀 Project-Specific Rules:**
+```markdown
+## Component Preferences
+- All forms must include Zod validation
+- All API calls must use TanStack Query
+```
+
+**Example Use Case:**
+You want electric blue as your primary color. Add this to `PROJECT.md`:
+
+```markdown
+## Design Customizations
+Our brand color is electric blue (#0066FF). Use this for:
+- All CTAs and primary buttons
+- Link colors
+- Active states and highlights
+```
+
+Now every AI assistant will use electric blue instead of AstroDeck's default!
+
+See `PROJECT.md` for a complete template with examples.
+
+#### `AGENTS.md` - AstroDeck Defaults
 
 The main configuration file containing:
 - Project overview and tech stack (Astro v5, Tailwind v4)
@@ -934,7 +976,9 @@ The main configuration file containing:
 - Do's and Don'ts for code generation
 - Component templates and debugging checklists
 
-#### `.claude/agents/astrodeck.md` (Claude Code Agent)
+**Note:** Instructions in `PROJECT.md` override these defaults.
+
+#### `.claude/agents/astrodeck.md` - Claude Code Agent
 
 Enhanced agent with AstroDeck-specific capabilities:
 - Proactive security, accessibility, SEO warnings

@@ -1,38 +1,7 @@
 {
-  "name": "@holgerkoenemann/astrodeck",
+  "name": "astrodeck",
   "type": "module",
   "version": "1.2.0",
-  "description": "Production-ready Astro.js starter kit with shadcn/ui, Tailwind CSS v4, and TypeScript. AI-friendly with AGENTS.md support.",
-  "keywords": [
-    "astro",
-    "astro-theme",
-    "astro-template",
-    "starter-kit",
-    "shadcn-ui",
-    "tailwind-css",
-    "typescript",
-    "component-library",
-    "ai-friendly"
-  ],
-  "license": "MIT",
-  "author": "Holger Konemann",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/holger1411/astrodeck.git"
-  },
-  "bugs": {
-    "url": "https://github.com/holger1411/astrodeck/issues"
-  },
-  "homepage": "https://astrodeck.dev",
-  "files": [
-    "src",
-    "public",
-    "astro.config.mjs",
-    "tsconfig.json",
-    "AGENTS.md",
-    "README.md",
-    "LICENSE"
-  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -13,6 +13,7 @@
     "@astrojs/react": "latest",
     "@radix-ui/react-label": "latest",
     "@radix-ui/react-slot": "latest",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "latest",
     "astro": "latest",

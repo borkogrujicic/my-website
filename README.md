@@ -10,7 +10,7 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 
 ## 🚀 Features
 
-- **🤖 AI-Friendly Development** - Comprehensive AI documentation (`.cursorrules`, `AI.md`) plus a dedicated Claude Code Agent helps you build faster
+- **🤖 AI-Friendly Development** - AGENTS.md standard + dedicated Claude Code Agent helps you build faster with any AI assistant
 - **15+ Pre-built Sections** - Heroes, CTAs, Pricing Tables, Testimonials, Newsletters, and more
 - **Multiple Layout Templates** - Boxed, Full-Width, and Auth layouts for different page types
 - **Fully Responsive** - Mobile-first design that looks great on all devices
@@ -860,44 +860,37 @@ For the best experience, the agent can leverage these optional MCP servers:
 
 ### AI Documentation Files
 
-#### `.cursorrules`
-**Purpose:** Configuration file for AI coding assistants (Cursor, Cline, etc.)
+AstroDeck follows the **AGENTS.md standard** - a single source of truth for all AI coding assistants.
+
+#### `AGENTS.md` (Primary)
+**Purpose:** Universal guidelines for all AI coding assistants
 
 Contains:
 - Project overview and tech stack
-- Code style conventions and patterns
+- Code conventions and patterns
 - Import aliases and file organization
 - Do's and Don'ts for code generation
 - Component templates and examples
-- Testing guidelines
+- Debugging checklists
 
-**Usage:** AI assistants automatically read this file to understand project conventions.
+**Supported by:** GitHub Copilot, Cursor, OpenAI Codex, Google Jules, Amp, and 20,000+ repositories.
 
-#### `AI.md`
-**Purpose:** Comprehensive guide specifically written for AI assistants
+#### `.cursorrules` → `AGENTS.md`
+**Purpose:** Symlink to AGENTS.md for Cursor IDE compatibility
 
-Contains:
-- Detailed architecture overview with diagrams
-- Technology stack explanation (Astro v5, Tailwind v4)
-- Design system documentation (colors, breakpoints)
-- Common development tasks with code examples
-- Component patterns and best practices
-- Pitfalls to avoid and debugging checklist
-- Quick reference for imports and patterns
+#### `CLAUDE.md` → `AGENTS.md`
+**Purpose:** Symlink to AGENTS.md for Claude Code compatibility
 
-**Usage:** Provides deep context for complex questions and implementations.
-
-#### `CONTRIBUTING.md` (AI Section)
-**Purpose:** Contribution guidelines with dedicated AI assistant section
+#### `.claude/agents/astrodeck.md`
+**Purpose:** Claude Code-specific agent with enhanced capabilities
 
 Contains:
-- Development setup instructions
-- Coding guidelines specific to this project
-- File location guide for common tasks
-- Pull request process
-- Bug reporting templates
+- Agent persona and identity
+- Proactive security, accessibility, SEO warnings
+- MCP server recommendations (Context7, Lighthouse)
+- DRY enforcement and code review features
 
-**Usage:** Helps AI assistants guide developers through contributions.
+**Usage:** Automatically activated when using Claude Code on AstroDeck.
 
 ### Benefits of AI-Friendly Documentation
 
@@ -938,7 +931,7 @@ AI: *Generates component following AstroDeck patterns*
 
 ```
 You: "Why am I getting Tailwind errors?"
-AI: *Checks against AI.md knowledge*
+AI: *Checks against AGENTS.md knowledge*
     - Recognizes Tailwind v4 is used
     - Knows about @theme configuration
     - Suggests OKLCH color format
@@ -949,8 +942,8 @@ AI: *Checks against AI.md knowledge*
 
 If you find ways to improve AI assistance for AstroDeck:
 
-1. Suggest updates to `.cursorrules` for better conventions
-2. Add examples to `AI.md` for common scenarios
+1. Suggest updates to `AGENTS.md` for better conventions
+2. Improve the Claude Code agent in `.claude/agents/astrodeck.md`
 3. Report AI-related issues or confusions
 4. Share successful AI interaction patterns
 

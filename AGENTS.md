@@ -216,6 +216,26 @@ npm run preview  # Preview production build locally
 
 ---
 
+## Git Workflow
+
+**IMPORTANT:** Never push to remote without explicit user request.
+
+- ✅ Commit changes locally when work is complete
+- ❌ Do NOT run `git push` unless the user explicitly asks to push
+- ❌ Do NOT automatically push after commits
+- Ask for confirmation before any push operation
+
+```bash
+# Commit is okay
+git add -A && git commit -m "feat: description"
+
+# Push requires explicit user command like:
+# "push", "push to main", "deploy", "push it"
+git push origin main
+```
+
+---
+
 ## Do's and Don'ts
 
 ### ✅ Always Do

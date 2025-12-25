@@ -9,9 +9,9 @@
 
 <section class="py-24 px-6 bg-muted/30">
   <div class="container max-w-6xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
       <!-- Left Column: AGENTS.md Standard + Claude Code Agent -->
-      <div class="space-y-8">
+      <div class="space-y-6">
         <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
           AI-Powered Development
         </div>
@@ -21,58 +21,25 @@
         <p class="text-lg text-muted-foreground leading-relaxed">
           AstroDeck follows the <a href="https://agents.md" target="_blank" rel="noopener" class="text-primary hover:underline font-medium">AGENTS.md standard</a> – an open format for guiding AI coding agents, used by <strong>60,000+ open-source projects</strong> and stewarded by the Linux Foundation.
         </p>
-
-        <!-- AGENTS.md Info -->
-        <div class="rounded-lg border bg-card p-6 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold">AGENTS.md</h3>
-              <p class="text-sm text-muted-foreground">Single source of truth for all AI tools</p>
-            </div>
-          </div>
-          <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
-            <div class="text-muted-foreground"># Project conventions</div>
-            <div class="text-foreground">✓ Tech stack (Astro v5, Tailwind v4)</div>
-            <div class="text-foreground">✓ Code patterns & imports</div>
-            <div class="text-foreground">✓ Component templates</div>
-            <div class="text-foreground">✓ Do's and Don'ts</div>
-          </div>
-        </div>
-
-        <!-- Claude Code Agent -->
-        <div class="rounded-lg border bg-card p-6 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold">Claude Code Agent</h3>
-              <p class="text-sm text-muted-foreground">Enhanced assistant with proactive warnings</p>
-            </div>
-          </div>
-          <div class="bg-muted/50 rounded p-3 font-mono text-xs space-y-1">
-            <div class="text-muted-foreground"># .claude/agents/astrodeck.md</div>
-            <div class="text-foreground">🛡️ Security checks</div>
-            <div class="text-foreground">♿ Accessibility audits</div>
-            <div class="text-foreground">🔍 SEO optimization</div>
-            <div class="text-foreground">⚡ Performance tips</div>
-          </div>
+        <p class="text-muted-foreground leading-relaxed">
+          One configuration file provides your entire AI toolchain with project conventions, code patterns, and best practices. Plus, a dedicated <strong>Claude Code Agent</strong> offers proactive security, accessibility, and SEO warnings.
+        </p>
+        <div class="pt-2">
+          <a
+            href="https://github.com/holger1411/astrodeck#-ai-friendly-development"
+            class="inline-flex items-center text-sm font-medium text-primary hover:underline"
+          >
+            Learn more in the documentation
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
 
       <!-- Right Column: Supported Tools -->
       <div class="space-y-6">
         <h3 class="text-xl font-semibold">Works with your favorite AI tools</h3>
-        <p class="text-muted-foreground">
-          One configuration file, compatible with the entire AI coding ecosystem.
-        </p>
 
         <!-- Tool Grid -->
         <div class="grid grid-cols-2 gap-4">
@@ -165,32 +132,21 @@
         </div>
 
         <!-- More Tools Link -->
-        <div class="pt-4 space-y-4">
-          <p class="text-sm text-muted-foreground">
+        <div class="pt-2">
+          <p class="text-sm text-muted-foreground mb-3">
             Plus: Zed, Aider, Factory, Amp, RooCode, Gemini CLI, and many more.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="https://agents.md"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center text-sm font-medium text-primary hover:underline"
-            >
-              View all supported tools at agents.md
-              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-              </svg>
-            </a>
-            <a
-              href="https://github.com/holger1411/astrodeck#-ai-friendly-development"
-              class="inline-flex items-center text-sm font-medium text-primary hover:underline"
-            >
-              Learn more in README
-              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
+          <a
+            href="https://agents.md"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center text-sm font-medium text-primary hover:underline"
+          >
+            View all supported tools at agents.md
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>

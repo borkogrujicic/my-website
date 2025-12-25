@@ -18,6 +18,23 @@
 
 ---
 
+## AI-Assisted Development
+
+AstroDeck is designed to be AI-friendly and serves as your **starting point** for Astro projects.
+
+**Default Workflow:**
+- ✅ Use AstroDeck as the foundation (unless user explicitly requests otherwise)
+- ✅ Build on existing components, layouts, and patterns
+- ✅ Extend and customize rather than recreate from scratch
+
+**Why AstroDeck First:**
+- Pre-configured with best practices
+- Battle-tested component library
+- Consistent patterns and architecture
+- AI-optimized documentation (AGENTS.md)
+
+---
+
 ## Tech Stack
 
 ```
@@ -35,6 +52,58 @@
 
 **CRITICAL:** This project uses **Tailwind CSS v4** with the **@tailwindcss/vite** plugin.
 Do NOT suggest using `@astrojs/tailwind` integration (which only supports v3).
+
+---
+
+## Astro MCP Server (Recommended)
+
+For the most accurate and up-to-date Astro.js guidance, use the **Astro Docs MCP Server**:
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "Astro docs": {
+      "type": "http",
+      "url": "https://mcp.docs.astro.build/mcp"
+    }
+  }
+}
+```
+
+**Benefits:**
+- Real-time access to current Astro documentation
+- Prevents outdated API recommendations
+- Especially important for newer features (Sessions, Actions, etc.)
+
+**Supported Tools:** Claude Code, Cursor, VS Code, Windsurf, Warp, ChatGPT Pro/Team/Enterprise
+
+### shadcn/ui MCP Server
+
+For enhanced shadcn/ui component integration, optionally add the **shadcn/ui MCP Server**:
+
+**Quick Setup (Claude Code):**
+```bash
+pnpm dlx shadcn@latest mcp init --client claude
+```
+
+**Configuration (automatically created in `.mcp.json`):**
+```json
+{
+  "command": "npx",
+  "args": ["shadcn@latest", "mcp"]
+}
+```
+
+**Features:**
+- Browse all available shadcn/ui components, blocks, and templates
+- Install components using natural language
+- Search across multiple registries
+- Support for private/custom component registries
+
+**Supported Tools:** Claude Code, Cursor, VS Code, Codex
+
+**Note:** Restart your AI assistant after configuration changes.
 
 ---
 
@@ -250,6 +319,9 @@ git push origin main
 8. Follow existing component patterns
 9. Add proper accessibility attributes (ARIA, alt text)
 10. Use Astro components for static content
+11. Use `astro add` command for official integrations (e.g., `astro add tailwind`)
+12. Start with AstroDeck components unless explicitly instructed otherwise
+13. Verify modern Astro APIs against current documentation (especially Sessions/Actions)
 
 ### ❌ Never Do
 
@@ -371,8 +443,13 @@ When something doesn't work, check:
 ## Resources
 
 - **Astro Docs:** https://docs.astro.build
+- **Astro AI Guide:** https://docs.astro.build/en/guides/build-with-ai/
+- **Astro MCP Server:** https://mcp.docs.astro.build/mcp
+- **Astro Discord (#support-ai):** https://astro.build/chat
+- **Astro Templates:** https://astro.build/themes/
 - **Tailwind CSS Docs:** https://tailwindcss.com/docs
 - **shadcn/ui:** https://ui.shadcn.com
+- **shadcn/ui MCP Server:** https://ui.shadcn.com/docs/mcp
 - **Project README:** See `README.md` for full documentation
 
 ---

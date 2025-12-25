@@ -72,3 +72,12 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
+
+mark {
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.3em;
+  background-position: 0 88%;
+  color: inherit;
+  padding: 0 0.1em;
+}

@@ -370,22 +370,32 @@ AstroDeck uses Tailwind CSS for styling. Here's how to customize:
 
 #### Changing Colors
 
-Edit `tailwind.config.mjs`:
+AstroDeck uses **Tailwind CSS v4** with the modern **OKLCH color format**. Edit `src/styles/globals.css`:
 
-```js
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          DEFAULT: 'hsl(221, 83%, 53%)', // Change primary color
-          foreground: 'hsl(0, 0%, 100%)',
-        },
-      },
-    },
-  },
+```css
+@theme {
+  /* Light mode colors */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(9.8% 0.0016 286.75);
+  --color-primary: oklch(11.2% 0.0079 286.75);      /* Change this */
+  --color-primary-foreground: oklch(98% 0.0011 286.75);
+  /* ... more colors */
+}
+
+.dark {
+  /* Dark mode overrides */
+  --color-background: oklch(1.5% 0 0);
+  --color-foreground: oklch(98% 0 0);
+  --color-primary: oklch(98% 0 0);                   /* Dark mode primary */
+  --color-primary-foreground: oklch(1.5% 0 0);
+  /* ... more colors */
 }
 ```
+
+**OKLCH Format:** `oklch(lightness% chroma hue)`
+- **Lightness:** 0-100% (0 = black, 100 = white)
+- **Chroma:** Color intensity (0 = grayscale, higher = more vivid)
+- **Hue:** Color angle in degrees (0-360)
 
 #### Adding Custom Fonts
 
@@ -484,25 +494,30 @@ AstroDeck uses CSS variables for theming, making it easy to switch between light
 
 #### Customizing Theme Colors
 
-Edit `src/styles/globals.css`:
+Edit `src/styles/globals.css` using the **OKLCH color format** (Tailwind v4):
 
 ```css
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
-    /* Add more custom colors */
-  }
+@theme {
+  /* Light mode colors */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(9.8% 0.0016 286.75);
+  --color-primary: oklch(11.2% 0.0079 286.75);
+  --color-primary-foreground: oklch(98% 0.0011 286.75);
+  --color-secondary: oklch(96.1% 0.0011 286.75);
+  --color-muted: oklch(96.1% 0.0011 286.75);
+  /* Add more custom colors */
+}
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 100%;
-    /* Dark mode overrides */
-  }
+.dark {
+  /* Dark mode overrides */
+  --color-background: oklch(1.5% 0 0);
+  --color-foreground: oklch(98% 0 0);
+  --color-primary: oklch(98% 0 0);
+  --color-primary-foreground: oklch(1.5% 0 0);
 }
 ```
+
+**Why OKLCH?** Better perceptual uniformity than HSL. Colors appear more consistent to the human eye.
 
 ### Modifying Components
 

@@ -17,8 +17,15 @@ The `PROJECT.md` file contains **project-specific customizations that override t
 
 **Priority Hierarchy:**
 1. **PROJECT.md** (highest) - Your project-specific instructions
-2. **AGENTS.md** (this file) - AstroDeck defaults and patterns
-3. **Component documentation** - Individual component guidelines
+2. **AGENTS.md** (this file) - AstroDeck defaults and patterns for AI assistants
+3. **README.md** - Human-readable documentation (installation, deployment, troubleshooting)
+4. **Component documentation** - Individual component guidelines
+
+**When to consult README.md:**
+- README.md is written for humans and provides additional context
+- Useful for understanding deployment options, installation methods, and user-facing documentation
+- Contains detailed explanations of features, troubleshooting guides, and community resources
+- Subordinate to AGENTS.md for AI coding conventions, but valuable for project context
 
 If `PROJECT.md` says "use vibrant blue for primary color" but this file says "use Astro blue,"
 the **PROJECT.md instruction wins**.
@@ -470,7 +477,15 @@ When something doesn't work, check:
 - **Tailwind CSS Docs:** https://tailwindcss.com/docs
 - **shadcn/ui:** https://ui.shadcn.com
 - **shadcn/ui MCP Server:** https://ui.shadcn.com/docs/mcp
-- **Project README:** See `README.md` for full documentation
+- **Project README:** See `README.md` for:
+  - 📦 Installation options (degit, ZIP download, GitHub clone)
+  - 🚀 Deployment guides (Vercel, Netlify, Cloudflare, GitHub Pages)
+  - 🔍 Troubleshooting common issues (port conflicts, module errors, dark mode, TypeScript)
+  - 🎨 Component library catalog (15+ pre-built sections with variants)
+  - 🏗️ Build optimization tips and performance best practices
+  - 📊 Analytics integration examples (Google Analytics, Vercel Analytics)
+  - 🤖 Detailed AI-friendly development guide
+  - 📄 License information and acknowledgments
 
 ---
 

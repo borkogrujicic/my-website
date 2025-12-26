@@ -82,15 +82,24 @@ Do NOT suggest using `@astrojs/tailwind` integration (which only supports v3).
 
 ---
 
-## Astro MCP Server (Recommended)
+## MCP Servers (Recommended for Claude Code)
 
-For the most accurate and up-to-date Astro.js guidance, use the **Astro Docs MCP Server**:
+For the best development experience with Claude Code, install these **Model Context Protocol (MCP)** servers:
 
-**Configuration:**
+### 1. Astro Docs MCP Server
+
+Provides real-time access to current Astro.js documentation.
+
+**Installation (Claude Code):**
+```bash
+claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp
+```
+
+**Manual Configuration (other tools):**
 ```json
 {
   "mcpServers": {
-    "Astro docs": {
+    "astro-docs": {
       "type": "http",
       "url": "https://mcp.docs.astro.build/mcp"
     }
@@ -105,20 +114,29 @@ For the most accurate and up-to-date Astro.js guidance, use the **Astro Docs MCP
 
 **Supported Tools:** Claude Code, Cursor, VS Code, Windsurf, Warp, ChatGPT Pro/Team/Enterprise
 
-### shadcn/ui MCP Server
+### 2. shadcn/ui MCP Server
 
-For enhanced shadcn/ui component integration, optionally add the **shadcn/ui MCP Server**:
+Enhanced shadcn/ui component integration and installation.
 
-**Quick Setup (Claude Code):**
+**Installation (Claude Code):**
+```bash
+claude mcp add --transport http shadcn https://www.shadcn.io/api/mcp
+```
+
+**Alternative Setup:**
 ```bash
 pnpm dlx shadcn@latest mcp init --client claude
 ```
 
-**Configuration (automatically created in `.mcp.json`):**
+**Manual Configuration:**
 ```json
 {
-  "command": "npx",
-  "args": ["shadcn@latest", "mcp"]
+  "mcpServers": {
+    "shadcn": {
+      "type": "http",
+      "url": "https://www.shadcn.io/api/mcp"
+    }
+  }
 }
 ```
 
@@ -130,7 +148,12 @@ pnpm dlx shadcn@latest mcp init --client claude
 
 **Supported Tools:** Claude Code, Cursor, VS Code, Codex
 
-**Note:** Restart your AI assistant after configuration changes.
+---
+
+**⚠️ Important:**
+- If using Claude Code, ask the user for permission before installing MCP servers
+- After installation, restart Claude Code to activate the servers
+- MCP servers enhance AI assistance but are optional
 
 ---
 

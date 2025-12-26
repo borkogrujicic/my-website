@@ -20,7 +20,7 @@
  * - Edit title/subtitle props for custom content
  * - Change CTA buttons by modifying primaryCta/secondaryCta props
  * - Remove badge by omitting the badge prop
- * - Adjust grid pattern by modifying gridSize, squareSize variables (lines 13-16)
+ * - Adjust grid pattern by modifying gridSize, squareSize variables
  * - Customize colors via Tailwind classes (background uses currentColor for theme support)
  */
 interface Props {
@@ -33,39 +33,46 @@ interface Props {
 
 const { title, subtitle, primaryCta, secondaryCta, badge } = Astro.props;
 
-// Generate contribution-like data in circular pattern for SVG
-const gridSize = 80;
+// Optimized grid generation - reduced size and deterministic pattern
+// Using seeded pseudo-random for consistent SSR output
+const gridSize = 50; // Reduced from 80 for better performance
 const centerX = gridSize / 2;
 const centerY = gridSize / 2;
-const squareSize = 12;
-const gap = 1;
+const squareSize = 14;
+const gap = 2;
 
-const getCircularIntensity = (x: number, y: number) => {
-  // Calculate distance from center
+// Deterministic pseudo-random based on position (no Math.random for SSR consistency)
+const seededRandom = (x: number, y: number): number => {
+  const seed = x * 1000 + y;
+  const a = Math.sin(seed * 12.9898 + seed * 78.233) * 43758.5453;
+  return a - Math.floor(a);
+};
+
+const getCircularIntensity = (x: number, y: number): number => {
   const dx = x - centerX;
   const dy = y - centerY;
   const distance = Math.sqrt(dx * dx + dy * dy);
-
+  
   // Create concentric circles effect
   const angle = Math.atan2(dy, dx);
-  const circlePattern = Math.sin(distance * 0.2 + angle * 2) * 2 + 2;
-  const randomFactor = Math.random() * 1.5;
-
+  const circlePattern = Math.sin(distance * 0.25 + angle * 2) * 2 + 2;
+  const randomFactor = seededRandom(x, y) * 1.5;
+  
   // Fade out towards edges
   const maxRadius = gridSize / 2;
   const fadeFactor = Math.max(0, 1 - (distance / maxRadius));
-
+  
   const combined = (circlePattern + randomFactor) * fadeFactor;
   return Math.floor(Math.min(4, combined));
 };
 
-// Generate SVG rects
-const rects = [];
+// Generate SVG rects - only include visible ones
+const rects: Array<{ x: number; y: number; opacity: number }> = [];
 for (let y = 0; y < gridSize; y++) {
   for (let x = 0; x < gridSize; x++) {
     const intensity = getCircularIntensity(x, y);
-    const opacity = intensity === 0 ? 0 : intensity * 0.25;
-    if (opacity > 0) {
+    if (intensity > 0) {
+      const opacity = intensity * 0.25;
       const xPos = x * (squareSize + gap);
       const yPos = y * (squareSize + gap);
       rects.push({ x: xPos, y: yPos, opacity });
@@ -80,7 +87,14 @@ const svgHeight = gridSize * (squareSize + gap);
 <section class="min-h-[70vh] flex items-center py-[10vh] md:py-[12vh] relative overflow-hidden">
   <!-- GitHub Contribution Grid Background as SVG -->
   <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none" style="z-index: 0;">
-    <svg width={svgWidth} height={svgHeight} xmlns="http://www.w3.org/2000/svg" class="text-foreground">
+    <svg 
+      width={svgWidth} 
+      height={svgHeight} 
+      viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+      xmlns="http://www.w3.org/2000/svg" 
+      class="text-foreground"
+      aria-hidden="true"
+    >
       {rects.map(rect => (
         <rect
           x={rect.x}

@@ -7,9 +7,10 @@
  */
 import { ViewTransitions } from "astro:transitions";
 import "@/styles/globals.css";
-import HeaderFullWidth from "@/components/HeaderFullWidth.astro";
-import FooterFullWidth from "@/components/FooterFullWidth.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import SEO from "@/components/SEO.astro";
+import FontPreload from "@/components/FontPreload.astro";
 
 interface Props {
   title: string;
@@ -31,6 +32,7 @@ const fullTitle = `${title} | AstroDeck`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <FontPreload />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{fullTitle}</title>
     <SEO 
@@ -53,10 +55,10 @@ const fullTitle = `${title} | AstroDeck`;
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium">
       Skip to content
     </a>
-    <HeaderFullWidth />
+    <Header variant="fullWidth" />
     <main id="main-content" class="flex-1 w-full">
       <slot />
     </main>
-    <FooterFullWidth />
+    <Footer variant="fullWidth" />
   </body>
 </html>

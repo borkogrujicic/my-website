@@ -296,7 +296,8 @@ const description = "SEO description (150-160 characters ideal)";
 |--------|----------|
 | `BaseLayout` | Content pages, blog posts, documentation (boxed, max-w-5xl) |
 | `FullWidthLayout` | Showcase pages, portfolios, galleries (full viewport width) |
-| `AuthLayout` | Login, signup, password reset (no header/footer) |
+| `MinimalLayout` | Standalone pages without navigation (404, maintenance, landing) |
+| `AuthLayout` | Login, signup, password reset (split screen with branding) |
 | `ArticleLayout` | Blog articles with reading-optimized typography |
 
 ---
@@ -325,12 +326,40 @@ Colors are defined as CSS variables in `src/styles/globals.css`:
 
 ---
 
+## SEO Features
+
+AstroDeck includes comprehensive SEO support out of the box:
+
+| Feature | File | Description |
+|---------|------|-------------|
+| **SEO Component** | `src/components/SEO.astro` | OpenGraph, Twitter Cards, canonical URLs |
+| **Sitemap** | Auto-generated | Via `@astrojs/sitemap` integration |
+| **RSS Feed** | `src/pages/rss.xml.ts` | Blog post feed at `/rss.xml` |
+| **robots.txt** | `public/robots.txt` | Search engine directives |
+
+**Usage in layouts:**
+```astro
+<SEO 
+  title="Page Title"
+  description="Page description"
+  image="/cover.png"
+  type="website"  // or "article" for blog posts
+  noindex={false} // Set true for auth pages
+/>
+```
+
+---
+
 ## Commands
 
 ```bash
-npm run dev      # Start dev server (http://localhost:4321)
-npm run build    # Build for production (outputs to dist/)
-npm run preview  # Preview production build locally
+npm run dev          # Start dev server (http://localhost:4321)
+npm run build        # Build for production (outputs to dist/)
+npm run preview      # Preview production build locally
+npm run lint         # Run ESLint
+npm run lint:fix     # Run ESLint with auto-fix
+npm run format       # Format code with Prettier
+npm run format:check # Check code formatting
 ```
 
 ---

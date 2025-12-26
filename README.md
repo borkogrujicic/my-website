@@ -12,12 +12,14 @@ AstroDeck provides pre-built, production-ready components that help you launch l
 
 - **🤖 AI-Friendly Development** - AGENTS.md standard + dedicated Claude Code Agent helps you build faster with any AI assistant
 - **15+ Pre-built Sections** - Heroes, CTAs, Pricing Tables, Testimonials, Newsletters, and more
-- **Multiple Layout Templates** - Boxed, Full-Width, and Auth layouts for different page types
+- **Multiple Layout Templates** - Boxed, Full-Width, Minimal, and Auth layouts for different page types
 - **Fully Responsive** - Mobile-first design that looks great on all devices
 - **Dark Mode Support** - Built-in theme switching with persistent preferences
 - **TypeScript** - Full type safety throughout the codebase
 - **shadcn/ui Components** - Beautiful, accessible React components integrated with Astro
 - **Lightning Fast** - Astro's zero-JS by default approach for optimal performance
+- **SEO Optimized** - Built-in OpenGraph, Twitter Cards, sitemap, RSS feed, and canonical URLs
+- **Code Quality Tools** - ESLint and Prettier configured for Astro and TypeScript
 - **Easy Customization** - Tailwind CSS for rapid styling adjustments
 - **Production Ready** - Optimized builds with analytics integration
 
@@ -112,11 +114,11 @@ Download the latest release directly:
 
 ```bash
 # Download the latest version
-wget https://github.com/holger1411/astrodeck/archive/refs/tags/v1.2.0.zip
+wget https://github.com/holger1411/astrodeck/archive/refs/tags/v1.3.0.zip
 
 # Extract
-unzip v1.2.0.zip
-cd astrodeck-1.2.0
+unzip v1.3.0.zip
+cd astrodeck-1.3.0
 
 # Install and run
 npm install
@@ -225,13 +227,17 @@ astrodeck/
 │   ├── layouts/            # Page layout templates
 │   │   ├── BaseLayout.astro      # Boxed layout (max-w-5xl)
 │   │   ├── FullWidthLayout.astro # Full-width layout
+│   │   ├── MinimalLayout.astro   # No header/footer (404, standalone)
 │   │   ├── AuthLayout.astro      # Auth pages (no header/footer)
 │   │   └── ArticleLayout.astro   # Blog/article layout
 │   ├── pages/              # File-based routing
 │   │   ├── index.astro     # Homepage (/)
 │   │   ├── sections.astro  # Section library (/sections)
+│   │   ├── blog/           # Blog pages
+│   │   ├── 404.astro       # Custom 404 page
 │   │   ├── login.astro     # Login page (/login)
-│   │   └── privacy.astro   # Privacy page (/privacy)
+│   │   ├── privacy.astro   # Privacy page (/privacy)
+│   │   └── rss.xml.ts      # RSS feed endpoint
 │   ├── styles/             # Global styles
 │   │   └── globals.css     # Tailwind + custom styles
 │   ├── lib/                # Utilities
@@ -362,6 +368,23 @@ import AuthLayout from "@/layouts/AuthLayout.astro";
   <!-- No header or footer, just your content -->
   <LoginForm />
 </AuthLayout>
+```
+
+#### 4. MinimalLayout
+
+Full-width layout without header or footer. Ideal for standalone pages like 404, maintenance, or landing pages.
+
+```astro
+---
+import MinimalLayout from "@/layouts/MinimalLayout.astro";
+---
+
+<MinimalLayout title="Page Not Found" noindex={true}>
+  <!-- Complete control over the viewport -->
+  <div class="flex items-center justify-center min-h-screen">
+    <h1>404 - Page Not Found</h1>
+  </div>
+</MinimalLayout>
 ```
 
 ### Customizing Styles

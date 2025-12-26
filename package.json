@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "latest",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
     "@radix-ui/react-label": "latest",
     "@radix-ui/react-slot": "latest",
     "@tailwindcss/typography": "^0.5.19",

@@ -10,6 +10,7 @@
  * - View transitions for smooth page navigation
  * - Vercel Analytics integration
  * - Semantic HTML structure
+ * - Complete SEO with OpenGraph and Twitter Cards
  *
  * @example
  * ```astro
@@ -32,14 +33,28 @@ import { ViewTransitions } from "astro:transitions";
 import "@/styles/globals.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import SEO from "@/components/SEO.astro";
 import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  author?: string;
 }
 
-const { title, description = "AstroDeck - Modern Astro.js Component Library" } = Astro.props;
+const { 
+  title, 
+  description = "AstroDeck - Modern Astro.js Component Library",
+  image,
+  type = 'website',
+  publishedTime,
+  author,
+} = Astro.props;
+
+const fullTitle = `${title} | AstroDeck`;
 ---
 
 <!doctype html>
@@ -47,9 +62,16 @@ const { title, description = "AstroDeck - Modern Astro.js Component Library" } =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | AstroDeck</title>
+    <title>{fullTitle}</title>
+    <SEO 
+      title={fullTitle}
+      description={description}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      author={author}
+    />
     <ViewTransitions />
     <script is:inline>
       // Prevent flash of wrong theme

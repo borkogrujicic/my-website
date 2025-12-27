@@ -45,7 +45,7 @@ function formatDate(date: Date) {
       {
         page.data.map((post, index) => (
           <article class="group">
-            <a href={`/blog/${post.slug}`} class="flex items-center justify-between gap-8 -mx-6 px-6 py-4 rounded-lg transition-colors hover:bg-accent/50">
+            <a href={`/blog/${post.id}`} class="flex items-center justify-between gap-8 -mx-6 px-6 py-4 rounded-lg transition-colors hover:bg-accent/50">
               <h2 class="text-4xl font-bold tracking-tight group-hover:text-primary transition-colors flex-1">
                 {post.data.title}
               </h2>

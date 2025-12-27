@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   );
 
   return sortedPosts.map((post, index) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: {
       post,
       prevPost: index < sortedPosts.length - 1 ? sortedPosts[index + 1] : null,
@@ -26,7 +26,7 @@ interface Props {
 }
 
 const { post, prevPost, nextPost } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Format date helper
 function formatDate(date: Date) {
@@ -134,7 +134,7 @@ function formatDate(date: Date) {
         <nav class="flex items-center justify-between gap-8">
           {prevPost ? (
             <a
-              href={`/blog/${prevPost.slug}`}
+              href={`/blog/${prevPost.id}`}
               class="group flex-1 text-left"
             >
               <div class="text-xs text-muted-foreground mb-1">Previous</div>
@@ -177,7 +177,7 @@ function formatDate(date: Date) {
 
           {nextPost ? (
             <a
-              href={`/blog/${nextPost.slug}`}
+              href={`/blog/${nextPost.id}`}
               class="group flex-1 text-right"
             >
               <div class="text-xs text-muted-foreground mb-1">Next</div>

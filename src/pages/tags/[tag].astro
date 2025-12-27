@@ -63,7 +63,7 @@ function formatDate(date: Date) {
       {
         sortedPosts.map((post) => (
           <article class="group">
-            <a href={`/blog/${post.slug}`} class="block space-y-4">
+            <a href={`/blog/${post.id}`} class="block space-y-4">
               <h2 class="text-3xl font-bold tracking-tight group-hover:text-primary transition-colors">
                 {post.data.title}
               </h2>

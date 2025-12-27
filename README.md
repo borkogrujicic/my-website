@@ -1,5 +1,9 @@
 # AstroDeck
 
+[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](https://github.com/holger1411/astrodeck/releases)
+[![Astro](https://img.shields.io/badge/Astro-5.x%20%7C%206.x-orange.svg)](https://astro.build)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 **A modern, open-source component library and starter kit for building stunning Astro.js websites in minutes. Built AI-friendly for seamless development with Claude, Cursor, and other coding assistants.**
 
 AstroDeck provides pre-built, production-ready components that help you launch landing pages, SaaS websites, and marketing sites faster. Built with [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com), and [shadcn/ui](https://ui.shadcn.com) components.

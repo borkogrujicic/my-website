@@ -118,11 +118,11 @@ Download the latest release directly:
 
 ```bash
 # Download the latest version
-wget https://github.com/holger1411/astrodeck/archive/refs/tags/v1.3.0.zip
+wget https://github.com/holger1411/astrodeck/archive/refs/tags/v1.4.0.zip
 
 # Extract
-unzip v1.3.0.zip
-cd astrodeck-1.3.0
+unzip v1.4.0.zip
+cd astrodeck-1.4.0
 
 # Install and run
 npm install
@@ -142,14 +142,14 @@ cd astrodeck
 npm install
 ```
 
-### Option 2: Use as a Template
+### Option 4: Use as a Template
 
 1. Click the **"Use this template"** button on GitHub
 2. Create a new repository from the template
 3. Clone your new repository
 4. Install dependencies with `npm install`
 
-### Option 3: Manual Download
+### Option 5: Manual Download
 
 1. Download the ZIP file from GitHub
 2. Extract it to your desired location

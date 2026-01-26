@@ -541,4 +541,19 @@ When something doesn't work, check:
 
 ---
 
+## Claude Code Integration (Optional)
+
+For Claude Code users, AstroDeck includes pre-built commands in `.claude/commands/`:
+
+| Command | Description |
+|---------|-------------|
+| `/new-page` | Create a new page with proper layout and SEO |
+| `/new-section` | Create a reusable section component |
+| `/audit` | Run comprehensive quality checks |
+| `/theme` | Customize design tokens and colors |
+
+These commands are optional enhancements. The `AGENTS.md` file remains the primary source of truth for all AI coding tools.
+
+---
+
 **Remember:** Keep code simple, follow the patterns, prioritize user experience.

@@ -963,8 +963,16 @@ astrodeck/
 ├── PROJECT.md              # 🎯 YOUR project customizations (HIGHEST PRIORITY)
 ├── AGENTS.md              # 📄 AstroDeck defaults (all AI tools)
 ├── .cursorrules           # 🔗 Symlink → AGENTS.md (Cursor)
-└── .claude/agents/
-    └── astrodeck.md       # 🤖 Claude Code Agent (enhanced features)
+└── .claude/
+    ├── agents/
+    │   └── astrodeck.md   # 🤖 Claude Code Agent (quality guardian)
+    ├── commands/          # ⚡ Slash commands for common tasks
+    │   ├── new-page.md    #    /new-page - Create pages
+    │   ├── new-section.md #    /new-section - Create components
+    │   ├── audit.md       #    /audit - Quality checks
+    │   └── theme.md       #    /theme - Customize colors
+    └── skills/
+        └── readme/        # 📚 Project documentation skill
 ```
 
 #### `PROJECT.md` - Your Project Customization File ⭐
@@ -1022,12 +1030,25 @@ The main configuration file containing:
 
 #### `.claude/agents/astrodeck.md` - Claude Code Agent
 
-Enhanced agent with AstroDeck-specific capabilities:
-- Proactive security, accessibility, SEO warnings
-- DRY enforcement and code review
-- MCP server recommendations (Context7, Lighthouse)
+Lightweight agent with AstroDeck-specific capabilities:
+- Proactive security, accessibility, SEO, performance warnings
+- Quick reference to AGENTS.md conventions
+- Streamlined for fast activation
 
 **Usage:** Automatically activated when using Claude Code on AstroDeck.
+
+#### `.claude/commands/` - Slash Commands
+
+Pre-built commands for common tasks:
+
+| Command | Description |
+|---------|-------------|
+| `/new-page` | Create a new page with layout and SEO setup |
+| `/new-section` | Create a reusable section component |
+| `/audit` | Run quality checks (lint, accessibility, SEO) |
+| `/theme` | Customize design tokens and colors |
+
+**Usage:** Type the command in Claude Code to activate.
 
 ### Benefits of AI-Friendly Documentation
 

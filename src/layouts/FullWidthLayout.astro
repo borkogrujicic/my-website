@@ -42,13 +42,30 @@ const fullTitle = `${title} | AstroDeck`;
     />
     <ViewTransitions />
     <script is:inline>
-      // Prevent flash of wrong theme
+      // Prevent flash of wrong theme - respects explicit user choice over system preference
       (function() {
         const theme = localStorage.getItem("theme");
-        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           document.documentElement.classList.add("dark");
         }
       })();
+      // Re-apply theme after View Transitions navigation
+      document.addEventListener("astro:after-swap", function() {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      });
     </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">

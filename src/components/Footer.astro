@@ -23,15 +23,14 @@ const { variant = 'boxed' } = Astro.props;
 const footerLinks = {
   pages: [
     { href: "/", label: "Home" },
-    { href: "/sections", label: "Sections" },
     { href: "/blog", label: "Blog" },
-    { href: "/login", label: "Login" },
+    { href: "/#contact", label: "Contact" },
     { href: "/privacy", label: "Privacy" },
   ],
   resources: [
-    { href: "https://astro.build", label: "Astro.js", external: true },
-    { href: "https://tailwindcss.com", label: "Tailwind CSS", external: true },
-    { href: "https://ui.shadcn.com", label: "shadcn/ui", external: true },
+    { href: "https://linkedin.com/in/borisavgrujicic", label: "LinkedIn", external: true },
+    { href: "https://www.salesforce.com/trailblazer/bgrujicic2", label: "Trailblazer Profile", external: true },
+    { href: "https://developer.salesforce.com", label: "Salesforce Dev", external: true },
   ],
 };
 
@@ -47,7 +46,7 @@ const containerClass = variant === 'fullWidth'
       <div class="col-span-2 md:col-span-1">
         <Logo />
         <p class="mt-4 text-sm text-muted-foreground">
-          Open-source Astro.js starter kit with ready-to-use components. Start building faster.
+          Salesforce Engineer building custom solutions and driving business growth.
         </p>
       </div>
 
@@ -65,9 +64,9 @@ const containerClass = variant === 'fullWidth'
         </ul>
       </div>
 
-      <!-- Built With -->
+      <!-- Links -->
       <div>
-        <h3 class="font-semibold mb-4">Built With</h3>
+        <h3 class="font-semibold mb-4">Links</h3>
         <ul class="space-y-2">
           {footerLinks.resources.map((link) => (
             <li>
@@ -87,17 +86,16 @@ const containerClass = variant === 'fullWidth'
         </ul>
       </div>
 
-      <!-- Creator -->
+      <!-- Connect -->
       <div>
-        <h3 class="font-semibold mb-4">Creator</h3>
-        <p class="text-sm text-muted-foreground">Created by</p>
+        <h3 class="font-semibold mb-4">Connect</h3>
         <a
-          href="https://holgerkoenemann.com"
-          class="text-sm font-medium hover:text-foreground transition-colors inline-flex items-center gap-1 mt-2"
+          href="https://linkedin.com/in/borisavgrujicic"
+          class="text-sm font-medium hover:text-foreground transition-colors inline-flex items-center gap-1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Holger Könemann
+          LinkedIn
           <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
           </svg>
@@ -107,7 +105,7 @@ const containerClass = variant === 'fullWidth'
 
     <!-- Copyright -->
     <div class="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-      <p>&copy; {new Date().getFullYear()} AstroDeck. MIT License. Open Source.</p>
+      <p>&copy; {new Date().getFullYear()} borkodev</p>
     </div>
   </div>
 </footer>

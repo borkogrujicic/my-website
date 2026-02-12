@@ -1,0 +1,42 @@
+---
+/**
+ * Interests Section
+ * Highlights areas of interest and continued learning.
+ */
+interface Props {
+  title?: string;
+  subtitle?: string;
+  interests?: string[];
+}
+
+const { 
+  title = "Always learning",
+  subtitle = "Exploring emerging technologies to bring smarter solutions to the Salesforce ecosystem.",
+  interests = ["AI & Machine Learning", "Automation", "Developer Experience", "Enterprise Architecture"]
+} = Astro.props;
+---
+
+<section class="py-24 px-6 bg-muted/30">
+  <div class="container max-w-5xl mx-auto">
+    <div class="space-y-6 text-center max-w-2xl mx-auto">
+      <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+        Beyond Salesforce
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold leading-tight">
+        {title}
+      </h2>
+      <p class="text-muted-foreground leading-relaxed">
+        {subtitle}
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 pt-4">
+        {interests.map((interest) => (
+          <span
+            class="inline-flex items-center rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:border-primary/50 transition-colors"
+          >
+            {interest}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

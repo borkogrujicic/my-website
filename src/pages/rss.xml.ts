@@ -8,8 +8,8 @@ export async function GET(context) {
   );
 
   return rss({
-    title: 'AstroDeck Blog',
-    description: 'Articles, tutorials, and updates from the AstroDeck project',
+    title: 'borkodev Blog',
+    description: 'Articles and insights on Salesforce, automation, and development',
     site: context.site,
     items: sortedPosts.map((post) => ({
       title: post.data.title,

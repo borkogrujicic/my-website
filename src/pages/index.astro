@@ -1,60 +1,73 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/sections/Hero.astro";
-import LogoCloud from "@/components/sections/LogoCloud.astro";
+import Certifications from "@/components/sections/Certifications.astro";
+import TechStack from "@/components/sections/TechStack.astro";
 import Features from "@/components/sections/Features.astro";
-import AIFeature from "@/components/sections/AIFeature.astro";
+import Interests from "@/components/sections/Interests.astro";
+import CTA from "@/components/sections/CTA.astro";
 
 const features = [
   {
-    title: "Astro.js Powered",
-    description: "Built with Astro for lightning-fast performance and optimal SEO out of the box.",
-    icon: "zap",
-  },
-  {
-    title: "shadcn/ui Components",
-    description: "Beautiful, accessible components built with Radix UI and Tailwind CSS.",
-    icon: "shield",
-  },
-  {
-    title: "TypeScript Ready",
-    description: "Full TypeScript support for type-safe development and better DX.",
+    title: "Sales & Service Cloud",
+    description: "Deep expertise in both Sales Cloud and Service Cloud—building flows, automations, and custom solutions that drive results.",
     icon: "chart",
   },
   {
-    title: "Dark Mode",
-    description: "Built-in dark mode support with seamless theme switching.",
+    title: "Custom Solutions",
+    description: "Built tailored solutions that solve real business problems. From complex integrations to bespoke Lightning components.",
+    icon: "zap",
+  },
+  {
+    title: "Business Growth",
+    description: "Helped organizations scale by streamlining processes, improving data quality, and enabling teams to work smarter.",
     icon: "users",
   },
   {
-    title: "Responsive Design",
-    description: "Mobile-first approach ensuring perfect display on all devices.",
+    title: "Sales Team Enablement",
+    description: "Empowered sales teams with better tools, automation, and visibility—leading to stronger pipeline and better outcomes.",
+    icon: "shield",
+  },
+  {
+    title: "Cross-Industry Experience",
+    description: "Worked across various industries—from outsource to in-house—delivering solutions that fit each unique context.",
     icon: "globe",
   },
   {
-    title: "Ready to Deploy",
-    description: "Optimized for Vercel, Netlify, and other modern hosting platforms.",
+    title: "7+ Years Experience",
+    description: "From agency to in-house engineer. Proven track record of delivering value and growing with the platform.",
     icon: "lock",
   },
 ];
 ---
 
-<BaseLayout title="AstroDeck - Astro.js Starter Kit" description="Open-source Astro.js starter kit with ready-to-use components, shadcn/ui, Tailwind CSS, and TypeScript. Install and start building.">
+<BaseLayout 
+  title="Salesforce Engineer & Developer" 
+  description="7+ years building custom Salesforce solutions. Sales Cloud, Service Cloud, and helping businesses grow. In-house engineer with cross-industry experience."
+>
   <Hero
-    badge="true"
-    title="Your Astro project, ready to take off."
-    subtitle="AstroDeck is a production-ready <mark>Astro.js starter kit</mark> with pre-built components, shadcn/ui, dark mode, and TypeScript. <mark>Built AI-friendly</mark> with <mark>AGENTS.md</mark> – the open standard supported by OpenAI, GitHub, Google, and all major coding assistants. Plus a dedicated <mark>Claude Code Agent</mark> for intelligent project guidance."
-    primaryCta={{ href: "https://github.com/holger1411/astrodeck/archive/refs/tags/v1.5.1.zip", label: "Download" }}
-    secondaryCta={{ href: "https://github.com/holger1411/astrodeck", label: "GitHub" }}
+    title="Salesforce Engineer building solutions that drive growth."
+    subtitle="7+ years of experience across <mark>Sales Cloud</mark> and <mark>Service Cloud</mark>. I've built custom solutions, helped businesses scale, and empowered sales teams to deliver better results—from outsource to in-house, across various industries."
+    primaryCta={{ href: "#contact", label: "Get in touch" }}
+    secondaryCta={{ href: "/blog", label: "Read my blog" }}
   />
 
-  <LogoCloud />
+  <Certifications />
 
-  <AIFeature />
+  <TechStack />
 
   <Features
-    title="Everything you need, right out of the box"
-    subtitle="Built with modern technologies and best practices to help you ship faster."
+    title="What I bring to the table"
+    subtitle="Proven experience delivering value across the Salesforce ecosystem."
     features={features}
+  />
+
+  <Interests />
+
+  <CTA
+    id="contact"
+    title="Let's work together"
+    description="Looking for a Salesforce engineer who can build custom solutions and help your team succeed? I'd love to hear from you."
+    cta={{ href: "mailto:hello@borkodev.com", label: "Say hello" }}
   />
 </BaseLayout>
